@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="scroll-smooth">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,202 +19,225 @@
   <meta property="og:description" content="إدارتك المالية أصبحت أسهل وأذكى. متوفر عبر الويب وقريباً على Google Play.">
   <meta property="og:image" content="https://www.alhelalsmart.com/icons/Icon-512.png">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-            },
-            dark: {
-              bg: '#05070f',
-              card: '#0c101d',
-              border: '#1b2234'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Font Awesome & خط تجوال -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Preconnect & Asynchronous Optimized Font Loading with display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Tajawal:wght@400;500;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Tajawal:wght@400;500;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Tajawal:wght@400;500;700;800;900&display=swap">
+  </noscript>
 
+  <!-- Complete Inlined Zero-Render-Blocking Modern CSS (مضغوط ومفصل بدون الحاجة لـ CDN) -->
   <style>
-    body {
-      font-family: 'Tajawal', sans-serif;
-    }
-    .en-font {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .glass-effect {
-      background: rgba(12, 16, 29, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-    .gradient-border {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(255, 255, 255, 0.03) 100%);
-    }
-    button, a, [role="button"] {
-      cursor: pointer !important;
-      user-select: none !important;
+    *, ::after, ::before { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: 'Tajawal', system-ui, -apple-system, sans-serif; background-color: #05070f; color: #f1f5f9; }
+    body { background-color: #05070f; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+    .en-font { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+
+    /* Utilities & Layout */
+    .container { width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+    .flex { display: flex; }
+    .inline-flex { display: inline-flex; }
+    .grid { display: grid; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .justify-end { justify-content: flex-end; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .relative { position: relative; }
+    .fixed { position: fixed; }
+    .hidden { display: none !important; }
+    .w-full { width: 100%; }
+    .shrink-0 { flex-shrink: 0; }
+    .select-none { user-select: none; }
+    .cursor-pointer { cursor: pointer; }
+
+    /* Components & Design System */
+    .glass-effect { background: rgba(12, 16, 29, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .gradient-border { background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(255, 255, 255, 0.03) 100%); }
+    .card-dark { background-color: #0c101d; border: 1px solid #1b2234; border-radius: 1.5rem; }
+    
+    /* Buttons */
+    .btn-brand { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; font-weight: 700; border-radius: 0.875rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none; border: none; cursor: pointer; transition: transform 0.2s, opacity 0.2s; }
+    .btn-brand:hover { opacity: 0.95; transform: scale(1.02); }
+    .btn-outline { background-color: #0c101d; border: 1px solid #1b2234; color: #ffffff; border-radius: 1rem; cursor: pointer; transition: border-color 0.2s; }
+    .btn-outline:hover { border-color: #3b82f6; }
+
+    /* Fix CLS & Animations */
+    .min-hero-card { min-height: 440px; }
+    .ping-circle { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background-color: #60a5fa; margin-left: 0.5rem; }
+
+    /* Spacings */
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+    .scroll-mt { scroll-margin-top: 6rem; }
+
+    /* Typography & Colors */
+    .text-brand { color: #60a5fa; }
+    .text-sub { color: #cbd5e1; }
+    .text-emerald { color: #34d399; }
+    .text-rose { color: #fb7185; }
+    .gradient-text { background: linear-gradient(to left, #93c5fd, #c7d2fe, #5eead4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    /* Modals */
+    .modal-backdrop { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 999; top: 0; left: 0; right: 0; bottom: 0; padding: 1rem; }
+    .modal-box { max-height: 85vh; width: 100%; max-width: 650px; background-color: #0c101d; border: 1px solid #1b2234; border-radius: 1.5rem; display: flex; flex-direction: column; overflow: hidden; }
+
+    @media (min-width: 768px) {
+      .md-flex { display: flex !important; }
+      .md-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+      .md-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+      .md-title { font-size: 3.8rem !important; line-height: 1.2 !important; }
     }
   </style>
 </head>
 
-<body class="bg-dark-bg text-slate-100 antialiased selection:bg-brand-600 selection:text-white relative overflow-x-hidden">
+<body>
 
-  <!-- إضاءة الخلفية الهادئة -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none -z-10" aria-hidden="true">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-blue-600/15 rounded-full blur-[140px]"></div>
-    <div class="absolute top-48 left-1/4 w-[350px] h-[350px] bg-indigo-600/10 rounded-full blur-[100px]"></div>
+  <!-- إضاءة خلفية هادئة مدمجة بدون تحميل صور -->
+  <div style="position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:1200px;height:500px;pointer-events:none;z-index:-1;" aria-hidden="true">
+    <div style="position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:550px;height:400px;background:rgba(37,99,235,0.12);border-radius:9999px;filter:blur(130px);"></div>
   </div>
 
   <!-- شريط التنقل (Navbar) -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-dark-border/80">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+  <header style="position:fixed;top:0;left:0;right:0;height:76px;z-index:50;background:rgba(5,7,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #1b2234;">
+    <div class="container flex items-center justify-between" style="height:100%;">
       
       <!-- الشعار -->
-      <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-3 group text-right cursor-pointer select-none" aria-label="الرجوع لأعلى الصفحة">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform duration-300">
-          <i class="fa-solid fa-wallet text-white text-base" aria-hidden="true"></i>
+      <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center select-none cursor-pointer" style="background:none;border:none;gap:0.75rem;text-align:right;" aria-label="الرجوع لأعلى الصفحة">
+        <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg, #2563eb, #4f46e5);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 16px rgba(37,99,235,0.25);">
+          <!-- المحفظة SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
         </div>
-        <div class="flex flex-col">
-          <span class="text-xl font-black tracking-tight text-white en-font">Alhelal<span class="text-brand-500">Smart</span></span>
-          <span class="text-[10px] text-slate-300 font-bold -mt-1 tracking-wider uppercase">Expense Manager</span>
+        <div>
+          <span style="font-size:1.25rem;font-weight:900;letter-spacing:-0.02em;color:#fff;" class="en-font">Alhelal<span class="text-brand">Smart</span></span>
+          <div style="font-size:9px;color:#94a3b8;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-top:-2px;">Expense Manager</div>
         </div>
       </button>
 
-      <!-- روابط القائمة العلوية -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-200 select-none" aria-label="التنقل الرئيسي">
-        <button type="button" onclick="scrollToSection('features')" class="hover:text-white transition-colors duration-200 cursor-pointer select-none py-2">المميزات</button>
-        <button type="button" onclick="scrollToSection('about')" class="hover:text-white transition-colors duration-200 cursor-pointer select-none py-2">عن التطبيق</button>
-        <button type="button" onclick="openModal('privacyModal')" class="hover:text-white transition-colors duration-200 cursor-pointer select-none py-2">الخصوصية</button>
-        <button type="button" onclick="openModal('termsModal')" class="hover:text-white transition-colors duration-200 cursor-pointer select-none py-2">الشروط</button>
+      <!-- روابط القائمة -->
+      <nav class="hidden md-flex items-center select-none" style="gap:2rem;font-size:0.92rem;font-weight:600;" aria-label="التنقل الرئيسي">
+        <button type="button" onclick="scrollToSection('features')" class="cursor-pointer text-sub" style="background:none;border:none;padding:8px;font-family:inherit;">المميزات</button>
+        <button type="button" onclick="scrollToSection('about')" class="cursor-pointer text-sub" style="background:none;border:none;padding:8px;font-family:inherit;">عن التطبيق</button>
+        <button type="button" onclick="openModal('privacyModal')" class="cursor-pointer text-sub" style="background:none;border:none;padding:8px;font-family:inherit;">الخصوصية</button>
+        <button type="button" onclick="openModal('termsModal')" class="cursor-pointer text-sub" style="background:none;border:none;padding:8px;font-family:inherit;">الشروط</button>
       </nav>
 
-      <!-- زر فتح نسخة الويب -->
-      <div class="flex items-center gap-4">
-        <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-brand-600/30 flex items-center gap-2 hover:scale-[1.02] cursor-pointer select-none" aria-label="فتح نسخة الويب في نافذة جديدة">
-          <span>فتح نسخة الويب</span>
-          <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
-        </a>
-      </div>
+      <!-- زر فتح التطبيق -->
+      <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-brand select-none" style="padding:0.65rem 1.25rem;font-size:0.875rem;" aria-label="فتح نسخة الويب في نافذة جديدة">
+        <span>فتح نسخة الويب</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      </a>
     </div>
   </header>
 
-  <!-- المعلم الرئيسي للمحتوى (Main Landmark) -->
+  <!-- المعلم الرئيسي للمحتوى -->
   <main>
     
     <!-- القسم الترحيبي (Hero Section) -->
-    <section class="pt-36 pb-20 md:pt-48 md:pb-28 relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-6 text-center">
+    <section style="padding-top:130px;padding-bottom:70px;text-align:center;">
+      <div class="container">
         
-        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-effect border border-dark-border text-xs font-semibold text-blue-300 mb-8 shadow-inner select-none">
-          <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping" aria-hidden="true"></span>
+        <div class="inline-flex items-center glass-effect select-none" style="padding:0.45rem 1.1rem;border-radius:9999px;border:1px solid #1b2234;font-size:0.8rem;font-weight:600;color:#93c5fd;margin-bottom:1.75rem;">
+          <span class="ping-circle" aria-hidden="true"></span>
           <span>الجيل الجديد لإدارة المصروفات الشخصية والذكاء المالي</span>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.2] max-w-4xl mx-auto">
-          إدارتك المالية أصبحت <br class="hidden sm:block" />
-          <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-teal-300 bg-clip-text text-transparent">أبسط، أسرع، وأكثر ذكاءً</span>
+        <h1 style="font-size:2.4rem;font-weight:900;line-height:1.25;color:#fff;max-width:850px;margin:0 auto;" class="md-title">
+          إدارتك المالية أصبحت <br>
+          <span class="gradient-text">أبسط، أسرع، وأكثر ذكاءً</span>
         </h1>
 
-        <p class="mt-7 text-base md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed font-normal">
+        <p class="text-sub" style="margin-top:1.5rem;font-size:1.1rem;line-height:1.7;max-width:680px;margin-left:auto;margin-right:auto;">
           تحكم في كل ليرة ومصروف بنقرة زر. تتبع مصادر دخلك، حدد ميزانيتك الشهرية، واحصل على تقارير ورسوم بيانية فائقة الوضوح تساعدك على التوفير.
         </p>
 
         <!-- أزرار الإجراء -->
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <button type="button" onclick="openModal('downloadModal')" class="flex items-center gap-3.5 px-7 py-3.5 rounded-2xl bg-dark-card border border-dark-border hover:border-brand-500/50 hover:bg-slate-900 transition-all duration-300 shadow-xl group cursor-pointer select-none" aria-label="تحميل التطبيق من متجر جوجل بلاي قريباً">
-            <i class="fa-brands fa-google-play text-2xl text-brand-500 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
-            <div class="text-right">
-              <div class="text-[10px] text-slate-300 font-bold uppercase">قريباً على</div>
-              <div class="text-sm font-bold text-white en-font leading-none mt-0.5">Google Play</div>
+        <div class="flex items-center justify-center flex-wrap" style="gap:1rem;margin-top:2.25rem;">
+          <button type="button" onclick="openModal('downloadModal')" class="btn-outline flex items-center select-none" style="padding:0.75rem 1.5rem;gap:0.75rem;text-align:right;" aria-label="تحميل التطبيق من جوجل بلاي قريباً">
+            <!-- Google Play SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" fill="#3b82f6"/><path d="M16.81 15.12L13.69 12L3.84 2.15C4.03 2.06 4.26 2 4.5 2C4.94 2 5.36 2.19 5.66 2.49L17.82 9.51L16.81 15.12Z" fill="#60a5fa"/><path d="M16.81 8.88L5.66 21.51C5.36 21.81 4.94 22 4.5 22C4.26 22 4.03 21.94 3.84 21.85L13.69 12L16.81 8.88Z" fill="#1d4ed8"/></svg>
+            <div>
+              <div style="font-size:10px;color:#94a3b8;font-weight:700;text-transform:uppercase;">قريباً على</div>
+              <div style="font-size:0.95rem;font-weight:800;color:#fff;" class="en-font">Google Play</div>
             </div>
           </button>
 
-          <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold transition-all duration-300 shadow-xl shadow-brand-600/30 hover:scale-[1.02] cursor-pointer select-none">
-            <i class="fa-solid fa-bolt text-sm" aria-hidden="true"></i>
+          <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-brand select-none" style="padding:0.9rem 1.75rem;font-size:0.95rem;" aria-label="تجربة تطبيق الويب المباشر في نافذة جديدة">
+            <!-- برق SVG -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             <span>تجربة تطبيق الويب المباشر</span>
           </a>
         </div>
 
-        <!-- واجهة المحاكاة العصرية (مع تصحيح التباين والترتيب الهيكلي) -->
-        <div class="mt-16 max-w-4xl mx-auto relative select-none">
-          <div class="rounded-3xl gradient-border p-2 sm:p-4 shadow-2xl shadow-blue-950/40">
-            <div class="rounded-2xl bg-dark-card border border-dark-border/80 overflow-hidden p-6 sm:p-10 text-right">
+        <!-- واجهة المحاكاة العصرية (مع تثبيت الأبعاد لمنع الـ CLS تماماً) -->
+        <div class="min-hero-card" style="margin-top:3.5rem;max-width:880px;margin-left:auto;margin-right:auto;">
+          <div class="gradient-border" style="border-radius:1.75rem;padding:0.75rem;box-shadow:0 25px 50px -12px rgba(5,15,40,0.6);">
+            <div class="card-dark" style="padding:1.75rem;text-align:right;">
               
-              <div class="flex items-center justify-between pb-6 border-b border-dark-border">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-200">
-                    <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+              <div class="flex items-center justify-between" style="border-bottom:1px solid #1b2234;padding-bottom:1.25rem;">
+                <div class="flex items-center" style="gap:0.75rem;">
+                  <div style="width:38px;height:38px;border-radius:9999px;background:#1e293b;display:flex;align-items:center;justify-content:center;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                   </div>
                   <div>
-                    <div class="text-sm font-bold text-white">المحفظة الشخصية</div>
-                    <p class="text-xs text-slate-300">تحديث فوري وسحابي آمن</p>
+                    <div style="font-size:0.95rem;font-weight:700;color:#fff;">المحفظة الشخصية</div>
+                    <div style="font-size:0.75rem;color:#cbd5e1;">تحديث فوري وسحابي آمن</div>
                   </div>
                 </div>
-                <span class="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+                <span style="font-size:0.75rem;font-weight:700;color:#34d399;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);padding:0.25rem 0.65rem;border-radius:8px;">
                   الميزانية متوازنة
                 </span>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-dark-border">
-                  <span class="text-xs text-slate-300">إجمالي الرصيد</span>
-                  <p class="text-2xl font-black text-white mt-1 en-font">$8,450.00</p>
+              <!-- بطاقات الأرقام -->
+              <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:0.85rem;margin-top:1.25rem;margin-bottom:1.25rem;">
+                <div style="background:rgba(15,23,42,0.6);border:1px solid #1b2234;border-radius:12px;padding:1rem;">
+                  <div style="font-size:0.75rem;color:#cbd5e1;">إجمالي الرصيد</div>
+                  <div style="font-size:1.5rem;font-weight:800;color:#fff;margin-top:0.25rem;" class="en-font">$8,450.00</div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-dark-border">
-                  <span class="text-xs text-emerald-300 flex items-center gap-1 font-semibold">
-                    <i class="fa-solid fa-arrow-trend-up text-[10px]" aria-hidden="true"></i> الدخل هذا الشهر
-                  </span>
-                  <p class="text-2xl font-black text-emerald-300 mt-1 en-font">+$3,200.00</p>
+                <div style="background:rgba(15,23,42,0.6);border:1px solid #1b2234;border-radius:12px;padding:1rem;">
+                  <div style="font-size:0.75rem;color:#34d399;font-weight:600;">+ الدخل هذا الشهر</div>
+                  <div style="font-size:1.5rem;font-weight:800;color:#34d399;margin-top:0.25rem;" class="en-font">+$3,200.00</div>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-900/60 border border-dark-border">
-                  <span class="text-xs text-rose-300 flex items-center gap-1 font-semibold">
-                    <i class="fa-solid fa-arrow-trend-down text-[10px]" aria-hidden="true"></i> إجمالي المصاريف
-                  </span>
-                  <p class="text-2xl font-black text-rose-300 mt-1 en-font">-$1,120.00</p>
+                <div style="background:rgba(15,23,42,0.6);border:1px solid #1b2234;border-radius:12px;padding:1rem;">
+                  <div style="font-size:0.75rem;color:#fb7185;font-weight:600;">- إجمالي المصاريف</div>
+                  <div style="font-size:1.5rem;font-weight:800;color:#fb7185;margin-top:0.25rem;" class="en-font">-$1,120.00</div>
                 </div>
               </div>
 
-              <div class="space-y-3">
-                <div class="text-xs font-bold text-slate-300 uppercase tracking-wider">آخر المصاريف المدخلة ذكياً</div>
+              <!-- قائمة المعاملات -->
+              <div style="display:flex;flex-direction:column;gap:0.65rem;">
+                <div style="font-size:0.75rem;font-weight:700;color:#cbd5e1;text-transform:uppercase;letter-spacing:0.05em;">آخر المصاريف المدخلة ذكياً</div>
                 
-                <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg bg-rose-500/10 text-rose-300 flex items-center justify-center">
-                      <i class="fa-solid fa-cart-shopping text-sm" aria-hidden="true"></i>
+                <div class="flex items-center justify-between" style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:0.75rem 1rem;">
+                  <div class="flex items-center" style="gap:0.75rem;">
+                    <div style="width:34px;height:34px;border-radius:8px;background:rgba(244,63,94,0.1);display:flex;align-items:center;justify-content:center;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                     </div>
                     <div>
-                      <p class="text-sm font-bold text-white">مشتريات بقالة وسوبرماركت</p>
-                      <span class="text-xs text-slate-300 font-medium">اليوم، 04:30 م</span>
+                      <div style="font-size:0.875rem;font-weight:700;color:#fff;">مشتريات بقالة وسوبرماركت</div>
+                      <div style="font-size:0.75rem;color:#cbd5e1;">اليوم، 04:30 م</div>
                     </div>
                   </div>
-                  <span class="text-sm font-bold text-rose-300 en-font">- $48.50</span>
+                  <div style="font-size:0.9rem;font-weight:700;color:#fb7185;" class="en-font">- $48.50</div>
                 </div>
 
-                <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-300 flex items-center justify-center">
-                      <i class="fa-solid fa-bolt text-sm" aria-hidden="true"></i>
+                <div class="flex items-center justify-between" style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:0.75rem 1rem;">
+                  <div class="flex items-center" style="gap:0.75rem;">
+                    <div style="width:34px;height:34px;border-radius:8px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     </div>
                     <div>
-                      <p class="text-sm font-bold text-white">فواتير وخدمات شهرية</p>
-                      <span class="text-xs text-slate-300 font-medium">أمس، 02:15 م</span>
+                      <div style="font-size:0.875rem;font-weight:700;color:#fff;">فواتير وخدمات شهرية</div>
+                      <div style="font-size:0.75rem;color:#cbd5e1;">أمس، 02:15 م</div>
                     </div>
                   </div>
-                  <span class="text-sm font-bold text-rose-300 en-font">- $120.00</span>
+                  <div style="font-size:0.9rem;font-weight:700;color:#fb7185;" class="en-font">- $120.00</div>
                 </div>
               </div>
 
@@ -226,45 +249,39 @@
     </section>
 
     <!-- قسم المميزات (Features) -->
-    <section id="features" class="py-24 border-t border-dark-border bg-slate-950/40 relative scroll-mt-24">
-      <div class="max-w-7xl mx-auto px-6">
+    <section id="features" class="py-24 scroll-mt" style="border-top:1px solid #1b2234;background:rgba(8,11,20,0.5);">
+      <div class="container">
         
-        <div class="text-center max-w-2xl mx-auto mb-16 select-none">
-          <span class="text-xs font-bold text-blue-400 uppercase tracking-widest block mb-3">قدرات فائقة</span>
-          <h2 class="text-3xl sm:text-4xl font-black text-white">كل ما يلزمك للتحكم الكامل بأموالك</h2>
-          <p class="text-slate-300 mt-4 text-base">تم بناء النظام ليكون بديهياً وسريعاً، ليمنحك تقارير دقيقة دون إضاعة وقتك في حسابات معقدة.</p>
+        <div class="text-center" style="max-w:640px;margin:0 auto 3.5rem auto;">
+          <span style="font-size:0.8rem;font-weight:800;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:0.5rem;">قدرات فائقة</span>
+          <h2 style="font-size:2rem;font-weight:900;color:#fff;">كل ما يلزمك للتحكم الكامل بأموالك</h2>
+          <p class="text-sub" style="margin-top:0.75rem;font-size:1rem;line-height:1.6;">تم بناء النظام ليكون بديهياً وسريعاً، ليمنحك تقارير دقيقة دون إضاعة وقتك في حسابات معقدة.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid md-grid-3" style="grid-template-columns:1fr;gap:1.5rem;">
           
-          <div class="p-8 rounded-3xl bg-dark-card border border-dark-border hover:border-brand-500/50 transition-all duration-300 group select-none">
-            <div class="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+          <div class="card-dark" style="padding:2rem;">
+            <div style="width:48px;height:48px;border-radius:14px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">تسجيل المصاريف بسرعة فائقة</h3>
-            <p class="text-slate-300 leading-relaxed text-sm">
-              أضف المعاملات بنقرتين فقط مع تصنيفات مخصصة (طعام، فواتير، سفر، تسوق) تساعدك على مراقبة نمط إنفاقك.
-            </p>
+            <h3 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:0.75rem;">تسجيل المصاريف بسرعة فائقة</h3>
+            <p class="text-sub" style="font-size:0.9rem;line-height:1.6;">أضف المعاملات بنقرتين فقط مع تصنيفات مخصصة (طعام، فواتير، سفر، تسوق) تساعدك على مراقبة نمط إنفاقك بدقة.</p>
           </div>
 
-          <div class="p-8 rounded-3xl bg-dark-card border border-dark-border hover:border-indigo-500/50 transition-all duration-300 group select-none">
-            <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-300 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+          <div class="card-dark" style="padding:2rem;">
+            <div style="width:48px;height:48px;border-radius:14px;background:rgba(99,102,241,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" aria-hidden="true"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">تحليلات ورسوم تفاعلية</h3>
-            <p class="text-slate-300 leading-relaxed text-sm">
-              شاهد توزيع نفقاتك الشهرية بالنسب المئوية والرسوم البيانية المباشرة لمعرفة البنود التي تستهلك ميزانيتك.
-            </p>
+            <h3 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:0.75rem;">تحليلات ورسوم تفاعلية</h3>
+            <p class="text-sub" style="font-size:0.9rem;line-height:1.6;">شاهد توزيع نفقاتك الشهرية بالنسب المئوية والرسوم البيانية المباشرة لمعرفة البنود التي تستهلك الجزء الأكبر من ميزانيتك.</p>
           </div>
 
-          <div class="p-8 rounded-3xl bg-dark-card border border-dark-border hover:border-teal-500/50 transition-all duration-300 group select-none">
-            <div class="w-14 h-14 rounded-2xl bg-teal-500/10 text-teal-300 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <div class="card-dark" style="padding:2rem;">
+            <div style="width:48px;height:48px;border-radius:14px;background:rgba(20,184,166,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">مزامنة سحابية وحماية مطلقة</h3>
-            <p class="text-slate-300 leading-relaxed text-sm">
-              بياناتك المالية مشفرة بالكامل ومحفوظة سحابياً، لتتمكن من الوصول لسجلاتك بأمان من الويب ومن هاتفك في أي لحظة.
-            </p>
+            <h3 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:0.75rem;">مزامنة سحابية وحماية مطلقة</h3>
+            <p class="text-sub" style="font-size:0.9rem;line-height:1.6;">بياناتك المالية مشفرة بالكامل ومحفوظة سحابياً، لتتمكن من الوصول لسجلاتك بأمان من الويب ومن هاتفك في أي لحظة.</p>
           </div>
 
         </div>
@@ -272,221 +289,186 @@
     </section>
 
     <!-- قسم عن التطبيق (About) -->
-    <section id="about" class="py-24 border-t border-dark-border relative scroll-mt-24">
-      <div class="max-w-7xl mx-auto px-6">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section id="about" class="py-24 scroll-mt" style="border-top:1px solid #1b2234;">
+      <div class="container">
+        <div class="grid md-grid-2" style="grid-template-columns:1fr;gap:3rem;align-items:center;">
           
           <div>
-            <span class="text-xs font-bold text-blue-400 uppercase tracking-widest select-none block">رؤيتنا</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 leading-tight select-none">
-              تطبيق صُمم لمساعدتك على الادخار وتحقيق الاستقرار المالي
-            </h2>
-            <p class="mt-6 text-slate-300 leading-relaxed text-base">
-              انطلق مشروع <strong class="text-white">Alhelal Smart Expense</strong> لسد الفجوة بين تعقيد التطبيقات المصرفية وصعوبة جداول الإكسل التقليدية. هدفنا توفير أداة يومية ذكية وخفيفة الوزن تمنح كل شخص السيطرة الكاملة على أمواله ومساعدته على ادخار المزيد للمستقبل.
+            <span style="font-size:0.8rem;font-weight:800;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;display:block;">رؤيتنا</span>
+            <h2 style="font-size:2rem;font-weight:900;color:#fff;margin-top:0.5rem;line-height:1.3;">تطبيق صُمم لمساعدتك على الادخار وتحقيق الاستقرار المالي</h2>
+            <p class="text-sub" style="margin-top:1.25rem;font-size:1rem;line-height:1.7;">
+              انطلق مشروع <strong style="color:#fff;">Alhelal Smart Expense</strong> لسد الفجوة بين تعقيد التطبيقات المصرفية وصعوبة جداول الإكسل التقليدية. هدفنا توفير أداة يومية ذكية وخفيفة الوزن تمنح كل شخص السيطرة الكاملة على أمواله ومساعدته على ادخار المزيد للمستقبل.
             </p>
 
-            <div class="mt-8 space-y-4 select-none">
-              <div class="flex items-start gap-4">
-                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-blue-300 flex items-center justify-center mt-1 text-xs shrink-0">
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+            <div style="margin-top:1.75rem;display:flex;flex-direction:column;gap:1rem;">
+              <div class="flex items-center" style="gap:0.75rem;">
+                <div style="width:24px;height:24px;border-radius:9999px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;color:#60a5fa;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <p class="text-sm text-slate-200"><strong class="text-white">سهولة تامة:</strong> لا تتطلب أي خبرة محاسبية للبدء والتسجيل.</p>
+                <div style="font-size:0.92rem;color:#cbd5e1;"><strong style="color:#fff;">سهولة تامة:</strong> لا تتطلب أي خبرة محاسبية سابقة للبدء والتسجيل.</div>
               </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-blue-300 flex items-center justify-center mt-1 text-xs shrink-0">
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <div class="flex items-center" style="gap:0.75rem;">
+                <div style="width:24px;height:24px;border-radius:9999px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;color:#60a5fa;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <p class="text-sm text-slate-200"><strong class="text-white">خصوصية 100%:</strong> لا نشارك بياناتك المالية مع أي جهة إعلانية خارجية مطلقاً.</p>
+                <div style="font-size:0.92rem;color:#cbd5e1;"><strong style="color:#fff;">خصوصية 100%:</strong> لا نشارك بياناتك المالية مع أي جهة إعلانية أو طرف خارجي.</div>
               </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-blue-300 flex items-center justify-center mt-1 text-xs shrink-0">
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <div class="flex items-center" style="gap:0.75rem;">
+                <div style="width:24px;height:24px;border-radius:9999px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;color:#60a5fa;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <p class="text-sm text-slate-200"><strong class="text-white">وصول متعدد المنصات:</strong> استخدم التطبيق من متصفح الكمبيوتر أو من تطبيق الهاتف بسهولة.</p>
+                <div style="font-size:0.92rem;color:#cbd5e1;"><strong style="color:#fff;">وصول عبر كل الأجهزة:</strong> استخدم التطبيق من متصفح الكمبيوتر أو الهاتف بسلاسة.</div>
               </div>
             </div>
           </div>
 
           <!-- إحصائيات بالأرقام -->
-          <div class="grid grid-cols-2 gap-4 select-none">
-            <div class="p-6 rounded-2xl bg-dark-card border border-dark-border text-center">
-              <span class="text-3xl font-black text-blue-400 en-font">99.9%</span>
-              <p class="text-xs text-slate-300 mt-2 font-bold">جاهزية واستقرار سحابي</p>
+          <div class="grid" style="grid-template-columns:repeat(2, 1fr);gap:1rem;">
+            <div class="card-dark text-center" style="padding:1.5rem;">
+              <div style="font-size:2rem;font-weight:900;color:#60a5fa;" class="en-font">99.9%</div>
+              <div style="font-size:0.8rem;color:#cbd5e1;font-weight:700;margin-top:0.5rem;">جاهزية واستقرار سحابي</div>
             </div>
-            <div class="p-6 rounded-2xl bg-dark-card border border-dark-border text-center">
-              <span class="text-3xl font-black text-emerald-300 en-font">256-bit</span>
-              <p class="text-xs text-slate-300 mt-2 font-bold">تشفير وأمان البيانات</p>
+            <div class="card-dark text-center" style="padding:1.5rem;">
+              <div style="font-size:2rem;font-weight:900;color:#34d399;" class="en-font">256-bit</div>
+              <div style="font-size:0.8rem;color:#cbd5e1;font-weight:700;margin-top:0.5rem;">تشفير وأمان البيانات</div>
             </div>
-            <div class="p-6 rounded-2xl bg-dark-card border border-dark-border text-center">
-              <span class="text-3xl font-black text-indigo-300 en-font">&lt;0.5s</span>
-              <p class="text-xs text-slate-300 mt-2 font-bold">سرعة استجابة فائقة</p>
+            <div class="card-dark text-center" style="padding:1.5rem;">
+              <div style="font-size:2rem;font-weight:900;color:#818cf8;" class="en-font">&lt;0.5s</div>
+              <div style="font-size:0.8rem;color:#cbd5e1;font-weight:700;margin-top:0.5rem;">سرعة استجابة فائقة</div>
             </div>
-            <div class="p-6 rounded-2xl bg-dark-card border border-dark-border text-center">
-              <span class="text-3xl font-black text-teal-300 en-font">100%</span>
-              <p class="text-xs text-slate-300 mt-2 font-bold">مجاني لتتبع النفقات الأساسية</p>
+            <div class="card-dark text-center" style="padding:1.5rem;">
+              <div style="font-size:2rem;font-weight:900;color:#2dd4bf;" class="en-font">100%</div>
+              <div style="font-size:0.8rem;color:#cbd5e1;font-weight:700;margin-top:0.5rem;">مجاني للمميزات الأساسية</div>
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- التذييل (Footer) مع تباين واضح جداً للنصوص -->
-  <footer class="border-t border-dark-border bg-[#03050c] py-14">
-    <div class="max-w-7xl mx-auto px-6">
+  <!-- التذييل (Footer) -->
+  <footer style="border-top:1px solid #1b2234;background:#03050c;padding:3rem 0;">
+    <div class="container">
       
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-dark-border/60">
-        <div class="flex items-center gap-3 select-none">
-          <div class="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center text-white text-base">
-            <i class="fa-solid fa-wallet" aria-hidden="true"></i>
+      <div class="flex items-center justify-between flex-wrap" style="gap:1.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(27,34,52,0.8);">
+        <div class="flex items-center" style="gap:0.75rem;">
+          <div style="width:36px;height:36px;border-radius:10px;background:#2563eb;display:flex;align-items:center;justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
           </div>
-          <span class="font-extrabold text-white text-lg en-font">Alhelal<span class="text-brand-500">Smart</span></span>
+          <span style="font-size:1.15rem;font-weight:800;color:#fff;" class="en-font">Alhelal<span class="text-brand">Smart</span></span>
         </div>
 
-        <nav class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-300 select-none" aria-label="روابط التذييل">
-          <button type="button" onclick="scrollToSection('features')" class="hover:text-white transition-colors cursor-pointer select-none">المميزات</button>
-          <button type="button" onclick="scrollToSection('about')" class="hover:text-white transition-colors cursor-pointer select-none">عن التطبيق</button>
-          <button type="button" onclick="openModal('privacyModal')" class="hover:text-blue-300 transition-colors cursor-pointer select-none">سياسة الخصوصية</button>
-          <button type="button" onclick="openModal('termsModal')" class="hover:text-blue-300 transition-colors cursor-pointer select-none">شروط الاستخدام</button>
+        <nav class="flex items-center flex-wrap" style="gap:1.5rem;font-size:0.875rem;" aria-label="روابط التذييل">
+          <button type="button" onclick="scrollToSection('features')" class="cursor-pointer text-sub" style="background:none;border:none;font-family:inherit;">المميزات</button>
+          <button type="button" onclick="scrollToSection('about')" class="cursor-pointer text-sub" style="background:none;border:none;font-family:inherit;">عن التطبيق</button>
+          <button type="button" onclick="openModal('privacyModal')" class="cursor-pointer text-brand" style="background:none;border:none;font-family:inherit;">سياسة الخصوصية</button>
+          <button type="button" onclick="openModal('termsModal')" class="cursor-pointer text-brand" style="background:none;border:none;font-family:inherit;">شروط الاستخدام</button>
         </nav>
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-300 gap-4 select-none">
+      <div class="flex items-center justify-between flex-wrap" style="padding-top:2rem;font-size:0.78rem;color:#cbd5e1;gap:1rem;">
         <p>© 2026 Alhelal Smart Expense. جميع الحقوق محفوظة.</p>
-        <p class="en-font text-slate-300">Crafted with precision by Alhelal Dev</p>
+        <p class="en-font">Crafted with precision by Alhelal Dev</p>
       </div>
 
     </div>
   </footer>
 
-  <!-- نافذة سياسة الخصوصية (Privacy Policy) -->
-  <div id="privacyModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
-    <div class="bg-dark-card border border-dark-border rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden text-right">
-      
-      <div class="p-6 border-b border-dark-border flex items-center justify-between select-none">
-        <h2 id="privacyTitle" class="text-xl font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-shield-halved text-brand-500" aria-hidden="true"></i>
-          <span>سياسة الخصوصية (Privacy Policy)</span>
-        </h2>
-        <button type="button" onclick="closeModal('privacyModal')" class="text-slate-300 hover:text-white text-lg p-2 cursor-pointer" aria-label="إغلاق نافذة الخصوصية">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+  <!-- نافذة الخصوصية (Privacy Policy) -->
+  <div id="privacyModal" class="fixed modal-backdrop hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="modal-box text-right">
+      <div class="flex items-center justify-between" style="padding:1.25rem 1.5rem;border-bottom:1px solid #1b2234;">
+        <h2 id="privacyTitle" style="font-size:1.15rem;font-weight:800;color:#fff;">سياسة الخصوصية (Privacy Policy)</h2>
+        <button type="button" onclick="closeModal('privacyModal')" class="cursor-pointer text-sub" style="background:none;border:none;padding:8px;" aria-label="إغلاق نافذة الخصوصية">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-
-      <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-200 leading-relaxed">
-        <p class="font-bold text-white">تاريخ السريان: أكتوبر 2026</p>
-        
-        <h3 class="font-bold text-white text-base">1. جمع البيانات</h3>
+      <div style="padding:1.5rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem;font-size:0.875rem;color:#cbd5e1;line-height:1.7;">
+        <p style="font-weight:700;color:#fff;">تاريخ السريان: أكتوبر 2026</p>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">1. جمع البيانات</h3>
         <p>نحن في Alhelal Smart Expense نحترم خصوصيتك لأقصى درجة. نقوم بجمع البيانات التي تدخلها طواعية لتتبع مصاريفك (مثل المبالغ، تصنيف النفقات، وملاحظات المعاملات) بهدف تقديم الخدمة الحسابية لك حصراً.</p>
-
-        <h3 class="font-bold text-white text-base">2. حماية وتشفير المعلومات</h3>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">2. حماية وتشفير المعلومات</h3>
         <p>تتم مزامنة بياناتك وحمايتها عبر خوادم سحابية مشفرة ببروتوكولات SSL/TLS. لا يتم الاطلاع على سجلاتك المالية أو مشاركتها أو بيعها لأي جهة إعلانية أو خارجية مطلقاً.</p>
-
-        <h3 class="font-bold text-white text-base">3. صلاحيات التطبيق</h3>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">3. صلاحيات التطبيق</h3>
         <p>لا يطلب تطبيقنا الوصول إلى جهات الاتصال أو الرسائل الخاصة أو الملفات غير المتعلقة بعمل التطبيق، ويلتزم بمعايير أمان وسياسات متجر Google Play.</p>
-
-        <h3 class="font-bold text-white text-base">4. حذف الحساب والبيانات</h3>
-        <p>يحق للمستخدم طلب حذف حسابه وكافة سجلاته المالية المرتبطة به نهائياً من خوادمنا في أي وقت من خلال التواصل معنا عبر البريد الإلكتروني.</p>
-
-        <h3 class="font-bold text-white text-base">5. التواصل معنا</h3>
-        <p>لأي استفسار بخصوص الخصوصية أو معالجة البيانات، يمكنك مراسلتنا مباشرة عبر: <span class="text-blue-300 en-font">support@alhelalsmart.com</span></p>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">4. حذف الحساب والبيانات</h3>
+        <p>يحق للمستخدم طلب حذف حسابه وكافة سجلاته المالية المرتبطة به نهائياً من خوادمنا في أي وقت من خلال التواصل معنا عبر البريد الإلكتروني: <span class="text-brand en-font">support@alhelalsmart.com</span></p>
       </div>
-
-      <div class="p-4 border-t border-dark-border flex justify-end select-none">
-        <button type="button" onclick="closeModal('privacyModal')" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm cursor-pointer">
-          إغلاق
-        </button>
+      <div class="flex justify-end" style="padding:1rem 1.5rem;border-top:1px solid #1b2234;">
+        <button type="button" onclick="closeModal('privacyModal')" class="btn-brand" style="padding:0.6rem 1.5rem;font-size:0.875rem;">إغلاق</button>
       </div>
-
     </div>
   </div>
 
   <!-- نافذة شروط الاستخدام (Terms of Service) -->
-  <div id="termsModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
-    <div class="bg-dark-card border border-dark-border rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden text-right">
-      
-      <div class="p-6 border-b border-dark-border flex items-center justify-between select-none">
-        <h2 id="termsTitle" class="text-xl font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-file-contract text-brand-500" aria-hidden="true"></i>
-          <span>شروط الاستخدام (Terms of Service)</span>
-        </h2>
-        <button type="button" onclick="closeModal('termsModal')" class="text-slate-300 hover:text-white text-lg p-2 cursor-pointer" aria-label="إغلاق نافذة الشروط">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+  <div id="termsModal" class="fixed modal-backdrop hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+    <div class="modal-box text-right">
+      <div class="flex items-center justify-between" style="padding:1.25rem 1.5rem;border-bottom:1px solid #1b2234;">
+        <h2 id="termsTitle" style="font-size:1.15rem;font-weight:800;color:#fff;">شروط الاستخدام (Terms of Service)</h2>
+        <button type="button" onclick="closeModal('termsModal')" class="cursor-pointer text-sub" style="background:none;border:none;padding:8px;" aria-label="إغلاق نافذة الشروط">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-
-      <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-200 leading-relaxed">
-        <h3 class="font-bold text-white text-base">1. شروط الخدمة</h3>
-        <p>استخدامك لتطبيق وموقع Alhelal Smart Expense يعني موافقتك على استخدام التطبيق لإدارة نفقاتك الشخصية بشكل قانوني ومشروع دون محاولة اختراق أو إساءة استخدام الخدمة السحابية.</p>
-
-        <h3 class="font-bold text-white text-base">2. إخلاء المسؤولية المالية</h3>
+      <div style="padding:1.5rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem;font-size:0.875rem;color:#cbd5e1;line-height:1.7;">
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">1. شروط الخدمة</h3>
+        <p>استخدامك لتطبيق وموقع Alhelal Smart Expense يعني موافقتك على استخدام التطبيق لإدارة نفقاتك الشخصية بشكل قانوني ومشروع دون محاولة إساءة استخدام الخدمة السحابية.</p>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">2. إخلاء المسؤولية المالية</h3>
         <p>تطبيق Alhelal Smart Expense هو أداة تنظيمية وتحليلية مساعدة، ولا يقدم نصائح مالية أو استشارات استثمارية معتمدة، وتقع كامل مسؤولية القرارات المالية على المستخدم نفسه.</p>
       </div>
-
-      <div class="p-4 border-t border-dark-border flex justify-end select-none">
-        <button type="button" onclick="closeModal('termsModal')" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm cursor-pointer">
-          إغلاق
-        </button>
+      <div class="flex justify-end" style="padding:1rem 1.5rem;border-top:1px solid #1b2234;">
+        <button type="button" onclick="closeModal('termsModal')" class="btn-brand" style="padding:0.6rem 1.5rem;font-size:0.875rem;">إغلاق</button>
       </div>
-
     </div>
   </div>
 
   <!-- نافذة Google Play الإشعارية -->
-  <div id="downloadModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
-    <div class="bg-dark-card border border-dark-border rounded-3xl max-w-md w-full p-8 text-center shadow-2xl">
-      <div class="w-16 h-16 rounded-2xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-3xl mx-auto mb-5">
-        <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+  <div id="downloadModal" class="fixed modal-backdrop hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
+    <div class="card-dark text-center" style="max-width:440px;width:100%;padding:2rem;">
+      <div style="width:60px;height:60px;border-radius:18px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem auto;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" fill="#3b82f6"/><path d="M16.81 15.12L13.69 12L3.84 2.15C4.03 2.06 4.26 2 4.5 2C4.94 2 5.36 2.19 5.66 2.49L17.82 9.51L16.81 15.12Z" fill="#60a5fa"/><path d="M16.81 8.88L5.66 21.51C5.36 21.81 4.94 22 4.5 22C4.26 22 4.03 21.94 3.84 21.85L13.69 12L16.81 8.88Z" fill="#1d4ed8"/></svg>
       </div>
-      <h2 id="downloadTitle" class="text-xl font-black text-white mb-2">قريباً على Google Play</h2>
-      <p class="text-sm text-slate-300 leading-relaxed mb-6">
+      <h2 id="downloadTitle" style="font-size:1.25rem;font-weight:900;color:#fff;margin-bottom:0.5rem;">قريباً على Google Play</h2>
+      <p class="text-sub" style="font-size:0.875rem;line-height:1.6;margin-bottom:1.5rem;">
         النسخة المخصصة لأجهزة أندرويد حالياً في مرحلة المراجعة الأخيرة على متجر Google Play. يمكنك استخدام نسخة الويب الفورية بكامل المميزات الآن!
       </p>
-      <div class="flex flex-col gap-3 select-none">
-        <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition-all shadow-lg shadow-brand-600/30">
-          فتح نسخة الويب فوراً
-        </a>
-        <button type="button" onclick="closeModal('downloadModal')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm transition-all">
-          إغلاق
-        </button>
+      <div class="flex flex-col" style="gap:0.75rem;">
+        <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-brand" style="padding:0.75rem;font-size:0.875rem;">فتح نسخة الويب فوراً</a>
+        <button type="button" onclick="closeModal('downloadModal')" class="btn-outline" style="padding:0.65rem;font-size:0.875rem;">إغلاق</button>
       </div>
     </div>
   </div>
 
-  <!-- كود التفاعل البرمجي النظيف -->
+  <!-- سكربت التحكم السلس والنظيف -->
   <script>
-    function scrollToSection(sectionId) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    function scrollToSection(id) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function openModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.remove('hidden');
+    function openModal(id) {
+      var m = document.getElementById(id);
+      if (m) {
+        m.classList.remove('hidden');
+        m.classList.add('flex');
         document.body.style.overflow = 'hidden';
       }
     }
 
-    function closeModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.add('hidden');
+    function closeModal(id) {
+      var m = document.getElementById(id);
+      if (m) {
+        m.classList.add('hidden');
+        m.classList.remove('flex');
         document.body.style.overflow = 'auto';
       }
     }
 
     window.addEventListener('click', function(e) {
-      if (e.target.classList.contains('backdrop-blur-sm')) {
+      if (e.target.classList.contains('modal-backdrop')) {
         e.target.classList.add('hidden');
+        e.target.classList.remove('flex');
         document.body.style.overflow = 'auto';
       }
     });
