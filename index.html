@@ -19,7 +19,7 @@
   <meta property="og:description" content="إدارتك المالية أصبحت أسهل وأذكى. متوفر عبر الويب وقريباً على Google Play.">
   <meta property="og:image" content="https://www.alhelalsmart.com/icons/Icon-512.png">
 
-  <!-- Preconnect & Asynchronous Font Loading with display=swap -->
+  <!-- Preconnect & Asynchronous Optimized Font Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Tajawal:wght@400;500;700;800;900&display=swap">
@@ -61,15 +61,28 @@
     .gradient-border { background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(255, 255, 255, 0.03) 100%); }
     .card-dark { background-color: #0c101d; border: 1px solid #1b2234; border-radius: 1.5rem; }
 
-    /* Interaction & Micro-press Animations */
-    button, a, .clickable-nav {
-      cursor: pointer !important;
-      user-select: none !important;
-      transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Unified Navigation Links with Subtle Hover & Active Micro-interaction */
+    .nav-btn {
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.5rem 0.9rem;
+      border-radius: 0.65rem;
+      background: transparent;
+      border: 1px solid transparent;
+      cursor: pointer;
+      user-select: none;
+      font-family: inherit;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    button:active, a:active, .clickable-nav:active {
-      transform: scale(0.94) !important;
-      opacity: 0.85 !important;
+    .nav-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .nav-btn:active {
+      transform: scale(0.95);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     /* Buttons */
@@ -84,48 +97,34 @@
       gap: 0.5rem;
       text-decoration: none;
       border: none;
+      cursor: pointer;
+      user-select: none;
       box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .btn-brand:hover {
       box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-      filter: brightness(1.1);
+      filter: brightness(1.08);
     }
+    .btn-brand:active {
+      transform: scale(0.96);
+    }
+
     .btn-outline {
       background-color: #0c101d;
       border: 1px solid #1b2234;
       color: #ffffff;
       border-radius: 1rem;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .btn-outline:hover {
       border-color: #3b82f6;
       background-color: #11172a;
     }
-
-    /* Distinct Navigation Color States */
-    .nav-item-neutral {
-      color: #e2e8f0;
-      font-weight: 600;
-      font-size: 0.92rem;
-      border-radius: 8px;
-      padding: 6px 12px;
-    }
-    .nav-item-neutral:hover {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.05);
-    }
-    .nav-item-accent {
-      color: #60a5fa;
-      font-weight: 700;
-      font-size: 0.92rem;
-      border-radius: 8px;
-      padding: 6px 12px;
-      background: rgba(59, 130, 246, 0.08);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-    .nav-item-accent:hover {
-      color: #93c5fd;
-      background: rgba(59, 130, 246, 0.18);
-      border-color: rgba(59, 130, 246, 0.4);
+    .btn-outline:active {
+      transform: scale(0.96);
     }
 
     /* Fix CLS & Spacings */
@@ -135,7 +134,7 @@
     .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
     .scroll-mt { scroll-margin-top: 6rem; }
 
-    /* Typography & Palettes */
+    /* Typography & Colors */
     .text-brand { color: #60a5fa; }
     .text-sub { color: #cbd5e1; }
     .text-emerald { color: #34d399; }
@@ -166,14 +165,11 @@
   <header style="position:fixed;top:0;left:0;right:0;height:76px;z-index:50;background:rgba(5,7,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #1b2234;">
     <div class="container flex items-center justify-between" style="height:100%;">
       
-      <!-- شعار الهلال Alhelal Crescent Logo المخصص -->
-      <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center select-none cursor-pointer" style="background:none;border:none;gap:0.75rem;text-align:right;" aria-label="الرجوع لأعلى الصفحة">
+      <!-- شعار الهلال Alhelal Crescent Logo المخصص مع انضغاط ناعم -->
+      <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center select-none cursor-pointer" style="background:none;border:none;gap:0.75rem;text-align:right;transition:transform 0.2s;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'" aria-label="الرجوع لأعلى الصفحة">
         <div style="width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg, #1d4ed8, #4338ca);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(37,99,235,0.3);border:1px solid rgba(255,255,255,0.1);">
-          <!-- أيقونة الهلال والذكاء المالي بدقة متناهية -->
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <!-- شكل الهلال المذهب/المضيء -->
             <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8A9.06 9.06 0 0 0 12 3Z" fill="#60a5fa"/>
-            <!-- نجمة الدقة المالية بجانب الهلال -->
             <path d="M19 4.5l.7 1.4 1.5.2-1.1 1.1.3 1.5-1.4-.7-1.4.7.3-1.5-1.1-1.1 1.5-.2.7-1.4z" fill="#facc15"/>
           </svg>
         </div>
@@ -183,15 +179,12 @@
         </div>
       </button>
 
-      <!-- روابط القائمة بتلوين متناسق وتأثير ضغط ناعم -->
-      <nav class="hidden md-flex items-center select-none" style="gap:1rem;font-family:inherit;" aria-label="التنقل الرئيسي">
-        <!-- الخياران الأولان بلون حيادي أنيق -->
-        <button type="button" onclick="scrollToSection('features')" class="clickable-nav nav-item-neutral" style="background:none;border:none;font-family:inherit;">المميزات</button>
-        <button type="button" onclick="scrollToSection('about')" class="clickable-nav nav-item-neutral" style="background:none;border:none;font-family:inherit;">عن التطبيق</button>
-        
-        <!-- الخياران الآخران بلون سماوي مخصص مميز -->
-        <button type="button" onclick="openModal('privacyModal')" class="clickable-nav nav-item-accent" style="font-family:inherit;">الخصوصية</button>
-        <button type="button" onclick="openModal('termsModal')" class="clickable-nav nav-item-accent" style="font-family:inherit;">الشروط</button>
+      <!-- روابط القائمة موحدة اللون بالكامل وبـ Hover وانضغاط ناعم واحترافي -->
+      <nav class="hidden md-flex items-center select-none" style="gap:0.5rem;" aria-label="التنقل الرئيسي">
+        <button type="button" onclick="scrollToSection('features')" class="nav-btn">المميزات</button>
+        <button type="button" onclick="scrollToSection('about')" class="nav-btn">عن التطبيق</button>
+        <button type="button" onclick="openModal('privacyModal')" class="nav-btn">الخصوصية</button>
+        <button type="button" onclick="openModal('termsModal')" class="nav-btn">الشروط</button>
       </nav>
 
       <!-- زر فتح نسخة الويب -->
@@ -327,7 +320,7 @@
           
           <div class="card-dark" style="padding:2rem;">
             <div style="width:48px;height:48px;border-radius:14px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
             </div>
             <h3 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:0.75rem;">تسجيل المصاريف بسرعة فائقة</h3>
             <p class="text-sub" style="font-size:0.9rem;line-height:1.6;">أضف المعاملات بنقرتين فقط مع تصنيفات مخصصة (طعام، فواتير، سفر، تسوق) تساعدك على مراقبة نمط إنفاقك بدقة.</p>
@@ -387,7 +380,7 @@
             </div>
           </div>
 
-          <!-- أرقام وإحصائيات -->
+          <!-- إحصائيات بالأرقام -->
           <div class="grid" style="grid-template-columns:repeat(2, 1fr);gap:1rem;">
             <div class="card-dark text-center" style="padding:1.5rem;">
               <div style="font-size:2rem;font-weight:900;color:#60a5fa;" class="en-font">99.9%</div>
@@ -413,7 +406,7 @@
 
   </main>
 
-  <!-- التذييل (Footer) -->
+  <!-- التذييل (Footer) بروابط موحدة وأنيقة -->
   <footer style="border-top:1px solid #1b2234;background:#03050c;padding:3rem 0;">
     <div class="container">
       
@@ -429,11 +422,11 @@
           <span style="font-size:1.15rem;font-weight:800;color:#fff;" class="en-font">Alhelal<span class="text-brand">Smart</span></span>
         </div>
 
-        <nav class="flex items-center flex-wrap" style="gap:1.25rem;font-size:0.875rem;" aria-label="روابط التذييل">
-          <button type="button" onclick="scrollToSection('features')" class="clickable-nav nav-item-neutral" style="background:none;border:none;font-family:inherit;">المميزات</button>
-          <button type="button" onclick="scrollToSection('about')" class="clickable-nav nav-item-neutral" style="background:none;border:none;font-family:inherit;">عن التطبيق</button>
-          <button type="button" onclick="openModal('privacyModal')" class="clickable-nav nav-item-accent" style="font-family:inherit;">سياسة الخصوصية</button>
-          <button type="button" onclick="openModal('termsModal')" class="clickable-nav nav-item-accent" style="font-family:inherit;">شروط الاستخدام</button>
+        <nav class="flex items-center flex-wrap" style="gap:0.5rem;" aria-label="روابط التذييل">
+          <button type="button" onclick="scrollToSection('features')" class="nav-btn">المميزات</button>
+          <button type="button" onclick="scrollToSection('about')" class="nav-btn">عن التطبيق</button>
+          <button type="button" onclick="openModal('privacyModal')" class="nav-btn">سياسة الخصوصية</button>
+          <button type="button" onclick="openModal('termsModal')" class="nav-btn">شروط الاستخدام</button>
         </nav>
       </div>
 
@@ -450,7 +443,7 @@
     <div class="modal-box text-right">
       <div class="flex items-center justify-between" style="padding:1.25rem 1.5rem;border-bottom:1px solid #1b2234;">
         <h2 id="privacyTitle" style="font-size:1.15rem;font-weight:800;color:#fff;">سياسة الخصوصية (Privacy Policy)</h2>
-        <button type="button" onclick="closeModal('privacyModal')" class="cursor-pointer text-sub" style="background:none;border:none;padding:8px;" aria-label="إغلاق نافذة الخصوصية">
+        <button type="button" onclick="closeModal('privacyModal')" class="nav-btn" style="padding:6px;" aria-label="إغلاق نافذة الخصوصية">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
@@ -476,7 +469,7 @@
     <div class="modal-box text-right">
       <div class="flex items-center justify-between" style="padding:1.25rem 1.5rem;border-bottom:1px solid #1b2234;">
         <h2 id="termsTitle" style="font-size:1.15rem;font-weight:800;color:#fff;">شروط الاستخدام (Terms of Service)</h2>
-        <button type="button" onclick="closeModal('termsModal')" class="cursor-pointer text-sub" style="background:none;border:none;padding:8px;" aria-label="إغلاق نافذة الشروط">
+        <button type="button" onclick="closeModal('termsModal')" class="nav-btn" style="padding:6px;" aria-label="إغلاق نافذة الشروط">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
