@@ -4,64 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Alhelal Smart Expense - رفيقك المالي الذكي لإدارة المصاريف</title>
-  <meta name="description" content="تتبع مصاريفك ونفقاتك اليومية بدقة وذكاء، حدد ميزانياتك الشهرية واحصل على تقارير وتحليلات بيانية فورية مع تطبيق Alhelal Smart Expense.">
-  <meta name="keywords" content="Alhelal Smart Expense, تتبع المصاريف, إدارة الأموال, تطبيق ميزانية, Expense Tracker, Personal Finance">
-  <meta name="author" content="Alhelal">
+  <title>Alhelal Smart Expense | إدارة المصاريف والميزانية الشخصية بذكاء</title>
+  <meta name="description" content="تطبيق Alhelal Smart Expense - تتبع مصاريفك ونفقاتك اليومية بدقة، حدد ميزانيتك الشهرية، وتحكم بأموالك مع تقارير وتحليلات فورية.">
+  <meta name="keywords" content="Alhelal Smart Expense, تتبع المصاريف, إدارة الأموال, تطبيق مالي, Expense Tracker, Personal Finance">
+  <meta name="author" content="Alhelal Dev">
   <meta name="robots" content="index, follow">
 
   <link rel="canonical" href="https://www.alhelalsmart.com/">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Meta Social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.alhelalsmart.com/">
   <meta property="og:title" content="Alhelal Smart Expense - تحكم بمصاريفك بذكاء">
-  <meta property="og:description" content="تطبيقك المالي المتكامل لتتبع النفقات والميزانية الشخصية. متوفر الآن على الويب وقريباً على Google Play.">
+  <meta property="og:description" content="إدارتك المالية أصبحت أسهل وأذكى. متوفر عبر الويب وقريباً على Google Play.">
   <meta property="og:image" content="https://www.alhelalsmart.com/icons/Icon-512.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- خط تجوال العصري -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            },
+            dark: {
+              bg: '#05070f',
+              card: '#0c101d',
+              border: '#1b2234'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Tajawal', sans-serif;
     }
     .en-font {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-effect {
+      background: rgba(12, 16, 29, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .gradient-border {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(255, 255, 255, 0.03) 100%);
     }
   </style>
 </head>
 
-<body class="bg-[#030712] text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-dark-bg text-slate-100 antialiased selection:bg-brand-600 selection:text-white relative overflow-x-hidden">
+
+  <!-- خلفيات الإضاءة العلوية -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none -z-10">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-blue-600/15 rounded-full blur-[140px]"></div>
+    <div class="absolute top-48 left-1/4 w-[350px] h-[350px] bg-indigo-600/10 rounded-full blur-[100px]"></div>
+  </div>
 
   <!-- شريط التنقل (Navbar) -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-md border-b border-slate-800">
+  <header class="fixed top-0 left-0 right-0 z-40 bg-dark-bg/85 backdrop-blur-md border-b border-dark-border/80">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
       <!-- الشعار -->
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20">
-          <i class="fa-solid fa-wallet text-white text-lg"></i>
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform duration-300">
+          <i class="fa-solid fa-wallet text-white text-base"></i>
         </div>
-        <span class="text-xl font-bold tracking-tight text-white en-font">Alhelal <span class="text-blue-500">Expense</span></span>
+        <div class="flex flex-col">
+          <span class="text-xl font-black tracking-tight text-white en-font">Alhelal<span class="text-brand-500">Smart</span></span>
+          <span class="text-[10px] text-slate-400 font-bold -mt-1 tracking-wider uppercase">Expense Manager</span>
+        </div>
       </a>
 
-      <!-- القائمة -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-        <a href="#features" class="hover:text-blue-400 transition-colors">المميزات</a>
-        <a href="#about" class="hover:text-blue-400 transition-colors">عن التطبيق</a>
-        <a href="#privacy" class="hover:text-blue-400 transition-colors">الخصوصية</a>
+      <!-- روابط القائمة -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-400">
+        <a href="#features" class="hover:text-white transition-colors duration-200">المميزات</a>
+        <a href="#about" class="hover:text-white transition-colors duration-200">عن التطبيق</a>
+        <a href="javascript:void(0)" onclick="openModal('privacyModal')" class="hover:text-white transition-colors duration-200">الخصوصية</a>
+        <a href="javascript:void(0)" onclick="openModal('termsModal')" class="hover:text-white transition-colors duration-200">الشروط</a>
       </nav>
 
-      <!-- زر فتح تطبيق الويب -->
+      <!-- زر فتح التطبيق -->
       <div class="flex items-center gap-4">
-        <a href="https://app.alhelalsmart.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-lg shadow-blue-600/30 flex items-center gap-2">
+        <a href="https://app.alhelalsmart.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-brand-600/30 flex items-center gap-2 hover:scale-[1.02]">
           <span>فتح نسخة الويب</span>
           <i class="fa-solid fa-arrow-left text-xs"></i>
         </a>
@@ -70,87 +109,163 @@
   </header>
 
   <!-- القسم الرئيسي (Hero Section) -->
-  <section class="pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden relative">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+  <section class="pt-36 pb-24 md:pt-48 md:pb-36 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center">
       
-      <!-- شارة ترحيبية -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-xs font-medium text-blue-400 mb-8">
-        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-        مدعوم بالذكاء الاصطناعي وبأحدث تقنيات الويب السحابية
+      <!-- شارة الحالة العلوية -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-effect border border-dark-border text-xs font-semibold text-brand-500 mb-8 animate-fade-in shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+        <span>الجيل الجديد لإدارة المصروفات الشخصية والذكاء المالي</span>
       </div>
 
       <!-- العنوان الرئيسي -->
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
-        إدارتك المالية الشخصية أصبحت <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">أسهل وأذكى</span>
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.2] max-w-4xl mx-auto">
+        إدارتك المالية أصبحت <br class="hidden sm:block" />
+        <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-teal-300 bg-clip-text text-transparent">أبسط، أسرع، وأكثر ذكاءً</span>
       </h1>
 
-      <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        تطبيق <span class="en-font font-semibold text-slate-200">Alhelal Smart Expense</span> يمنحك الرؤية الشاملة للتحكم في ميزانيتك، تتبع نفقاتك اليومية، والتخطيط لمدخراتك بكل بساطة وأمان.
+      <p class="mt-7 text-base md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-normal">
+        تحكم في كل ليرة ومصروف بنقرة زر. تتبع مصادر دخلك، حدد ميزانيتك الشهرية، واحصل على تقارير ورسوم بيانية فائقة الوضوح تساعدك على التوفير.
       </p>
 
-      <!-- أزرار الإجراء (CTA) -->
+      <!-- أزرار الدعوة للإجراء (CTA) -->
       <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
         <!-- زر Google Play -->
-        <a href="#download" class="flex items-center gap-3 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-2xl transition-all shadow-md">
-          <i class="fa-brands fa-google-play text-2xl text-blue-400"></i>
+        <a href="#download" class="flex items-center gap-3.5 px-7 py-3.5 rounded-2xl bg-dark-card border border-dark-border hover:border-brand-500/50 hover:bg-slate-900 transition-all duration-300 shadow-xl group">
+          <i class="fa-brands fa-google-play text-2xl text-brand-500 group-hover:scale-110 transition-transform"></i>
           <div class="text-right">
-            <div class="text-[10px] text-slate-400 uppercase tracking-wider">تحميل للأندرويد</div>
-            <div class="text-sm font-bold text-white en-font">Google Play</div>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">قريباً على</div>
+            <div class="text-sm font-bold text-white en-font leading-none mt-0.5">Google Play</div>
           </div>
         </a>
 
-        <!-- زر نسخة الويب -->
-        <a href="https://app.alhelalsmart.com" target="_blank" class="flex items-center gap-3 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 rounded-2xl text-white font-bold transition-all shadow-xl shadow-blue-600/30">
-          <i class="fa-solid fa-globe text-lg"></i>
-          <span>تجربة نسخة الويب المباشرة</span>
+        <!-- زر تطبيق الويب المباشر -->
+        <a href="https://app.alhelalsmart.com" target="_blank" class="flex items-center gap-3 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold transition-all duration-300 shadow-xl shadow-brand-600/30 hover:scale-[1.02]">
+          <i class="fa-solid fa-bolt text-sm"></i>
+          <span>تجربة تطبيق الويب المباشر</span>
         </a>
       </div>
+
+      <!-- محاكاة تفاعلية للتطبيق (App Mockup Showcase) -->
+      <div class="mt-16 max-w-4xl mx-auto relative">
+        <div class="rounded-3xl gradient-border p-2 sm:p-4 shadow-2xl shadow-blue-950/40">
+          <div class="rounded-2xl bg-dark-card border border-dark-border/80 overflow-hidden p-6 sm:p-10 text-right">
+            
+            <!-- رأس بطاقة التطبيق -->
+            <div class="flex items-center justify-between pb-6 border-b border-dark-border">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300">
+                  <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">المحفظة الشخصية</h4>
+                  <p class="text-xs text-slate-400">تحديث فوري وسحابي آمن</p>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold">
+                الميزانية متوازنة
+              </span>
+            </div>
+
+            <!-- ملخص الأرقام المالية -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+              <div class="p-4 rounded-xl bg-slate-900/50 border border-dark-border">
+                <span class="text-xs text-slate-400">إجمالي الرصيد</span>
+                <p class="text-2xl font-black text-white mt-1 en-font">$8,450.00</p>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/50 border border-dark-border">
+                <span class="text-xs text-emerald-400 flex items-center gap-1">
+                  <i class="fa-solid fa-arrow-trend-up text-[10px]"></i> الدخل هذا الشهر
+                </span>
+                <p class="text-2xl font-black text-emerald-400 mt-1 en-font">+$3,200.00</p>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/50 border border-dark-border">
+                <span class="text-xs text-rose-400 flex items-center gap-1">
+                  <i class="fa-solid fa-arrow-trend-down text-[10px]"></i> إجمالي المصاريف
+                </span>
+                <p class="text-2xl font-black text-rose-400 mt-1 en-font">-$1,120.00</p>
+              </div>
+            </div>
+
+            <!-- أحدث العمليات المسجلة -->
+            <div class="space-y-3">
+              <h5 class="text-xs font-bold text-slate-400 uppercase tracking-wider">آخر المصاريف المدخلة ذكياً</h5>
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/70 border border-slate-800/80">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center">
+                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold text-white">مشتريات بقالة وسوبرماركت</p>
+                    <span class="text-xs text-slate-500">اليوم، 04:30 م</span>
+                  </div>
+                </div>
+                <span class="text-sm font-bold text-rose-400 en-font">- $48.50</span>
+              </div>
+
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/70 border border-slate-800/80">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                    <i class="fa-solid fa-bolt text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold text-white">فواتير وخدمات شهرية</p>
+                    <span class="text-xs text-slate-500">أمس، 02:15 م</span>
+                  </div>
+                </div>
+                <span class="text-sm font-bold text-rose-400 en-font">- $120.00</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- قسم المميزات (Features) -->
-  <section id="features" class="py-24 border-t border-slate-800/60 bg-slate-950/40 relative">
+  <!-- قسم المميزات (Features Bento Grid) -->
+  <section id="features" class="py-24 border-t border-dark-border bg-slate-950/30 relative">
     <div class="max-w-7xl mx-auto px-6">
       
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-white">كل ما تحتاجه للتحكم بأموالك</h2>
-        <p class="text-slate-400 mt-4">صُممت كل ميزة لمساعدتك على اتخاذ قرارات مالية واعية دون تعقيد.</p>
+        <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest mb-3">قدرات فائقة</h2>
+        <p class="text-3xl sm:text-4xl font-black text-white">كل ما يلزمك للتحكم الكامل بأموالك</p>
+        <p class="text-slate-400 mt-4 text-base">تم بناء النظام ليكون بديهياً وسريعاً، ليمنحك تقارير دقيقة دون إضاعة وقتك في حسابات معقدة.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- الميزة 1 -->
-        <div class="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/40 transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+        <!-- بطاقة 1 -->
+        <div class="p-8 rounded-3xl bg-dark-card border border-dark-border hover:border-brand-500/50 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-blue-500/10 text-brand-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-receipt"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">تسجيل نفقات فوري</h3>
+          <h3 class="text-xl font-bold text-white mb-3">تسجيل المصاريف بسرعة فائقة</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            أضف مشترياتك ومدفوعاتك في ثوانٍ مع تصنيف تلقائي ذكي يساعدك على تتبع أين تذهب أموالك يومياً.
+            أضف المعاملات بنقرتين فقط مع تصنيفات مخصصة (طعام، فواتير، سفر، تسوق) تساعدك على مراقبة نمط إنفاقك.
           </p>
         </div>
 
-        <!-- الميزة 2 -->
-        <div class="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/40 transition-all group">
+        <!-- بطاقة 2 -->
+        <div class="p-8 rounded-3xl bg-dark-card border border-dark-border hover:border-indigo-500/50 transition-all duration-300 group">
           <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-chart-pie"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">تحليلات ورسوم بيانية</h3>
+          <h3 class="text-xl font-bold text-white mb-3">تحليلات ورسوم تفاعلية</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            شاهد نفقاتك بوضوح عبر رسوم بيانية تفاعلية تلخص مصاريفك الأسبوعية والشهرية بدقة عالية.
+            شاهد توزيع نفقاتك الشهرية بالنسب المئوية والرسوم البيانية المباشرة لمعرفة البنود التي تستهلك ميزانيتك.
           </p>
         </div>
 
-        <!-- الميزة 3 -->
-        <div class="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/40 transition-all group">
+        <!-- بطاقة 3 -->
+        <div class="p-8 rounded-3xl bg-dark-card border border-dark-border hover:border-teal-500/50 transition-all duration-300 group">
           <div class="w-14 h-14 rounded-2xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <i class="fa-solid fa-shield-halved"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">مزامنة سحابية آمنة</h3>
+          <h3 class="text-xl font-bold text-white mb-3">مزامنة سحابية وحماية مطلقة</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            بياناتك مشفرة ومحفوظة سحابياً، لتتمكن من الوصول إلى سجلاتك من هاتفك أو عبر متصفح الويب في أي وقت.
+            بياناتك المالية مشفرة بالكامل ومحفوظة سحابياً، لتتمكن من الوصول لسجلاتك بأمان من الويب ومن هاتفك في أي لحظة.
           </p>
         </div>
 
@@ -158,29 +273,194 @@
     </div>
   </section>
 
-  <!-- قسم التذييل وسياسة الخصوصية (Footer & Privacy Policy) -->
-  <footer id="privacy" class="border-t border-slate-800 bg-[#02050e] py-14">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+  <!-- قسم عن التطبيق والأهداف (About Section) -->
+  <section id="about" class="py-24 border-t border-dark-border relative">
+    <div class="max-w-7xl mx-auto px-6">
       
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white text-sm">
-          <i class="fa-solid fa-wallet"></i>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div>
+          <span class="text-xs font-bold text-brand-500 uppercase tracking-widest">رؤيتنا</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 leading-tight">
+            تطبيق صُمم لمساعدتك على الادخار وتحقيق الاستقرار المالي
+          </h2>
+          <p class="mt-6 text-slate-400 leading-relaxed text-base">
+            انطلق مشروع <strong class="text-white">Alhelal Smart Expense</strong> لسد الفجوة بين تعقيد التطبيقات المصرفية وصعوبة جداول الإكسل التقليدية. هدفنا توفير أداة يومية ذكية وخفيفة الوزن تمنح كل شخص السيطرة الكاملة على أمواله ومساعدته على ادخار المزيد للمستقبل.
+          </p>
+
+          <div class="mt-8 space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center mt-1 text-xs">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <p class="text-sm text-slate-300"><strong class="text-white">سهولة تامة:</strong> لا تتطلب أي خبرة محاسبية للبدء والتسجيل.</p>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center mt-1 text-xs">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <p class="text-sm text-slate-300"><strong class="text-white">خصوصية 100%:</strong> لا نشارك بياناتك المالية مع أي جهة إعلانية خارجية مطلقاً.</p>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center mt-1 text-xs">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <p class="text-sm text-slate-300"><strong class="text-white">وصول متعدد المنصات:</strong> استخدم التطبيق من متصفح الكمبيوتر أو من تطبيق الهاتف بسهولة.</p>
+            </div>
+          </div>
         </div>
-        <span class="font-bold text-white en-font">Alhelal Smart Expense</span>
+
+        <!-- إحصائيات سريعة -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-dark-card border border-dark-border text-center">
+            <span class="text-3xl font-black text-brand-500 en-font">99.9%</span>
+            <p class="text-xs text-slate-400 mt-2 font-bold">جاهزية واستقرار سحابي</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-dark-card border border-dark-border text-center">
+            <span class="text-3xl font-black text-emerald-400 en-font">256-bit</span>
+            <p class="text-xs text-slate-400 mt-2 font-bold">تشفير وأمان البيانات</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-dark-card border border-dark-border text-center">
+            <span class="text-3xl font-black text-indigo-400 en-font">&lt;0.5s</span>
+            <p class="text-xs text-slate-400 mt-2 font-bold">سرعة استجابة فائقة</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-dark-card border border-dark-border text-center">
+            <span class="text-3xl font-black text-teal-400 en-font">100%</span>
+            <p class="text-xs text-slate-400 mt-2 font-bold">مجاني لتتبع النفقات الأساسية</p>
+          </div>
+        </div>
+
       </div>
 
-      <div class="text-sm text-slate-500 text-center">
-        جميع الحقوق محفوظة © 2026 Alhelal Dev.
+    </div>
+  </section>
+
+  <!-- التذييل (Footer) -->
+  <footer class="border-t border-dark-border bg-[#03050c] py-14">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-dark-border/60">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center text-white text-base">
+            <i class="fa-solid fa-wallet"></i>
+          </div>
+          <span class="font-extrabold text-white text-lg en-font">Alhelal<span class="text-brand-500">Smart</span></span>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-400">
+          <a href="#features" class="hover:text-white transition-colors">المميزات</a>
+          <a href="#about" class="hover:text-white transition-colors">عن التطبيق</a>
+          <a href="javascript:void(0)" onclick="openModal('privacyModal')" class="hover:text-brand-400 transition-colors">سياسة الخصوصية (Privacy Policy)</a>
+          <a href="javascript:void(0)" onclick="openModal('termsModal')" class="hover:text-brand-400 transition-colors">شروط الاستخدام</a>
+        </div>
       </div>
 
-      <div class="flex items-center gap-6 text-sm text-slate-400">
-        <a href="#" class="hover:text-white transition-colors">سياسة الخصوصية</a>
-        <a href="#" class="hover:text-white transition-colors">شروط الاستخدام</a>
-        <a href="mailto:support@alhelalsmart.com" class="hover:text-white transition-colors">تواصل معنا</a>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 Alhelal Smart Expense. جميع الحقوق محفوظة.</p>
+        <p class="en-font text-slate-400">Crafted with precision by Alhelal Dev</p>
       </div>
 
     </div>
   </footer>
+
+  <!-- نافذة سياسة الخصوصية (Privacy Policy Modal) متوافقة مع Google Play -->
+  <div id="privacyModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-dark-card border border-dark-border rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden text-right">
+      
+      <!-- رأس النافذة -->
+      <div class="p-6 border-b border-dark-border flex items-center justify-between">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-shield-halved text-brand-500"></i>
+          <span>سياسة الخصوصية (Privacy Policy)</span>
+        </h3>
+        <button onclick="closeModal('privacyModal')" class="text-slate-400 hover:text-white text-lg p-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- محتوى السياسة -->
+      <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-300 leading-relaxed">
+        <p class="font-bold text-white">تاريخ السريان: أكتوبر 2026</p>
+        
+        <h4 class="font-bold text-white text-base">1. جمع البيانات</h4>
+        <p>نحن في Alhelal Smart Expense نحترم خصوصيتك لأقصى درجة. نقوم بجمع البيانات التي تدخلها طواعية لتتبع مصاريفك (مثل المبالغ، تصنيف النفقات، وملاحظات المعاملات) بهدف تقديم الخدمة الحسابية لك حصراً.</p>
+
+        <h4 class="font-bold text-white text-base">2. حماية وتشفير المعلومات</h4>
+        <p>تتم مزامنة بياناتك وحمايتها عبر خوادم سحابية مشفرة ببروتوكولات SSL/TLS. لا يتم الاطلاع على سجلاتك المالية أو بيعها لأي جهة خارجية أو شبكات إعلانية بأي شكل من الأشكال.</p>
+
+        <h4 class="font-bold text-white text-base">3. صلاحيات التطبيق</h4>
+        <p>لا يطلب تطبيقنا الوصول إلى جهات الاتصال أو الرسائل الخاصة أو الملفات غير المتعلقة بعمل التطبيق، ويلتزم بمعايير أمان وسياسات متجر Google Play.</p>
+
+        <h4 class="font-bold text-white text-base">4. حذف الحساب والبيانات</h4>
+        <p>يحق للمستخدم طلب حذف حسابه وكافة سجلاته المالية المرتبطة به نهائياً من خوادمنا في أي وقت من خلال الإعدادات أو بالتواصل معنا عبر البريد الإلكتروني.</p>
+
+        <h4 class="font-bold text-white text-base">5. التواصل معنا</h4>
+        <p>لأي استفسار بخصوص الخصوصية أو معالجة البيانات، يمكنك مراسلتنا مباشرة عبر: <span class="text-brand-400 en-font">support@alhelalsmart.com</span></p>
+      </div>
+
+      <!-- تذييل النافذة -->
+      <div class="p-4 border-t border-dark-border flex justify-end">
+        <button onclick="closeModal('privacyModal')" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm">
+          فهمت ذلك وإغلاق
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- نافذة شروط الاستخدام (Terms Modal) -->
+  <div id="termsModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-dark-card border border-dark-border rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden text-right">
+      
+      <div class="p-6 border-b border-dark-border flex items-center justify-between">
+        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-file-contract text-brand-500"></i>
+          <span>شروط الاستخدام (Terms of Service)</span>
+        </h3>
+        <button onclick="closeModal('termsModal')" class="text-slate-400 hover:text-white text-lg p-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-300 leading-relaxed">
+        <h4 class="font-bold text-white text-base">1. شروط الخدمة</h4>
+        <p>استخدامك لتطبيق وموقع Alhelal Smart Expense يعني موافقتك على استخدام التطبيق لإدارة نفقاتك الشخصية بشكل قانوني ومشروع.</p>
+
+        <h4 class="font-bold text-white text-base">2. إخلاء المسؤولية المالية</h4>
+        <p>تطبيق Alhelal Smart Expense هو أداة تنظيمية وتحليلية مساعدة، ولا يقدم استشارات استثمارية أو مصرفية معتمدة، وتقع مسؤولية القرارات المالية على المستخدم نفسه.</p>
+      </div>
+
+      <div class="p-4 border-t border-dark-border flex justify-end">
+        <button onclick="closeModal('termsModal')" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm">
+          إغلاق
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- جافاسكريبت التحكم في النوافذ -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // إغلاق النافذة عند الضغط على الخلفية الخارجية
+    window.onclick = function(event) {
+      if (event.target.classList.contains('backdrop-blur-sm')) {
+        event.target.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    }
+  </script>
 
 </body>
 </html>
