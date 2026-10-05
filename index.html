@@ -75,12 +75,13 @@
     <div class="absolute top-48 left-1/4 w-[350px] h-[350px] bg-indigo-600/10 rounded-full blur-[100px]"></div>
   </div>
 
-  <!-- شريط التنقل (Navbar) -->
+
+  <!-- شريط التنقل (Navbar) النظيف والاحترافي -->
   <header class="fixed top-0 left-0 right-0 z-40 bg-dark-bg/85 backdrop-blur-md border-b border-dark-border/80">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- الشعار -->
-      <a href="#" class="flex items-center gap-3 group">
+      <!-- الشعار (التمرير للأعلى بنعومة دون إضافة # في الرابط) -->
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-3 group text-right">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform duration-300">
           <i class="fa-solid fa-wallet text-white text-base"></i>
         </div>
@@ -88,17 +89,17 @@
           <span class="text-xl font-black tracking-tight text-white en-font">Alhelal<span class="text-brand-500">Smart</span></span>
           <span class="text-[10px] text-slate-400 font-bold -mt-1 tracking-wider uppercase">Expense Manager</span>
         </div>
-      </a>
+      </button>
 
-      <!-- روابط القائمة -->
+      <!-- روابط القائمة النظيفة (بدون ظهور هاش في شريط العنوان) -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-400">
-        <a href="#features" class="hover:text-white transition-colors duration-200">المميزات</a>
-        <a href="#about" class="hover:text-white transition-colors duration-200">عن التطبيق</a>
-        <a href="javascript:void(0)" onclick="openModal('privacyModal')" class="hover:text-white transition-colors duration-200">الخصوصية</a>
-        <a href="javascript:void(0)" onclick="openModal('termsModal')" class="hover:text-white transition-colors duration-200">الشروط</a>
+        <button onclick="scrollToSection('features')" class="hover:text-white transition-colors duration-200">المميزات</button>
+        <button onclick="scrollToSection('about')" class="hover:text-white transition-colors duration-200">عن التطبيق</button>
+        <button onclick="openModal('privacyModal')" class="hover:text-white transition-colors duration-200">الخصوصية</button>
+        <button onclick="openModal('termsModal')" class="hover:text-white transition-colors duration-200">الشروط</button>
       </nav>
 
-      <!-- زر فتح التطبيق -->
+      <!-- زر فتح تطبيق الويب -->
       <div class="flex items-center gap-4">
         <a href="https://app.alhelalsmart.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-brand-600/30 flex items-center gap-2 hover:scale-[1.02]">
           <span>فتح نسخة الويب</span>
