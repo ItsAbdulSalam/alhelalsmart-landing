@@ -31,54 +31,19 @@
   <!-- Complete Inlined Zero-Render-Blocking Modern CSS -->
   <style>
     *, ::after, ::before { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-family: 'Tajawal', system-ui, -apple-system, sans-serif; background-color: #05070f; color: #f1f5f9; }
-    
-    body {
-      background-color: #05070f;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 48px 48px, 48px 48px;
-      background-position: -1px -1px, -1px -1px;
-      overflow-x: hidden;
-      -webkit-tap-highlight-color: transparent;
-    }
+    html { scroll-behavior: smooth; font-family: 'Tajawal', system-ui, -apple-system, sans-serif; background-color: #03050c; color: #f1f5f9; }
+    body { background-color: #03050c; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
     .en-font { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
 
-    /* حركات الشفق الضوئي الحية والواضحة عبر الـ GPU */
-    @keyframes aurora-glow-1 {
-      0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.7; }
-      50% { transform: translate3d(130px, 70px, 0) scale(1.3); opacity: 0.95; }
-      100% { transform: translate3d(-50px, 35px, 0) scale(0.95); opacity: 0.7; }
-    }
-    @keyframes aurora-glow-2 {
-      0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.6; }
-      50% { transform: translate3d(-110px, -50px, 0) scale(1.25); opacity: 0.9; }
-      100% { transform: translate3d(45px, -25px, 0) scale(1.05); opacity: 0.6; }
-    }
-    .aurora-orb-1 {
-      position: absolute;
-      top: -80px;
-      left: 15%;
-      width: 550px;
-      height: 440px;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, rgba(59, 130, 246, 0.25) 45%, transparent 70%);
-      filter: blur(65px);
-      border-radius: 50%;
-      animation: aurora-glow-1 7.5s ease-in-out infinite alternate;
-      will-change: transform, opacity;
-    }
-    .aurora-orb-2 {
-      position: absolute;
-      top: 90px;
-      right: 15%;
-      width: 520px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.5) 0%, rgba(147, 51, 234, 0.22) 45%, transparent 70%);
-      filter: blur(65px);
-      border-radius: 50%;
-      animation: aurora-glow-2 9.5s ease-in-out infinite alternate;
-      will-change: transform, opacity;
+    /* Canvas الخلفية الفضائية المتحركة */
+    #stars-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Layout & Utilities */
@@ -173,14 +138,13 @@
       transform: scale(0.96);
     }
 
-    /* Fix CLS & Spacings */
+    /* Spacings & Typography */
     .min-hero-card { min-height: 440px; }
     .ping-circle { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background-color: #60a5fa; margin-left: 0.5rem; }
     .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
     .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
     .scroll-mt { scroll-margin-top: 6rem; }
 
-    /* Typography & Colors */
     .text-brand { color: #60a5fa; }
     .text-sub { color: #cbd5e1; }
     .text-emerald { color: #34d399; }
@@ -202,17 +166,14 @@
 
 <body>
 
-  <!-- طبقة التوهج الديناميكي المتحرك الواضح -->
-  <div style="position:fixed;top:0;left:0;right:0;height:100vh;overflow:hidden;pointer-events:none;z-index:-1;" aria-hidden="true">
-    <div class="aurora-orb-1"></div>
-    <div class="aurora-orb-2"></div>
-  </div>
+  <!-- شاشة الكانفاس للنجوم المتحركة عالية الأداء -->
+  <canvas id="stars-bg"></canvas>
 
   <!-- شريط التنقل (Navbar) -->
   <header style="position:fixed;top:0;left:0;right:0;height:76px;z-index:50;background:rgba(5,7,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #1b2234;">
     <div class="container flex items-center justify-between" style="height:100%;">
       
-      <!-- شعار الهلال Alhelal Crescent Logo المخصص مع انضغاط ناعم -->
+      <!-- شعار الهلال المخصص مع تأثير ضغط ناعم -->
       <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center select-none cursor-pointer" style="background:none;border:none;gap:0.75rem;text-align:right;transition:transform 0.2s;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'" aria-label="الرجوع لأعلى الصفحة">
         <div style="width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg, #1d4ed8, #4338ca);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(37,99,235,0.3);border:1px solid rgba(255,255,255,0.1);">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -226,7 +187,7 @@
         </div>
       </button>
 
-      <!-- روابط القائمة موحدة اللون بالكامل وبـ Hover وانضغاط ناعم واحترافي -->
+      <!-- روابط القائمة موحدة ونقية -->
       <nav class="hidden md-flex items-center select-none" style="gap:0.5rem;" aria-label="التنقل الرئيسي">
         <button type="button" onclick="scrollToSection('features')" class="nav-btn">المميزات</button>
         <button type="button" onclick="scrollToSection('about')" class="nav-btn">عن التطبيق</button>
@@ -354,7 +315,7 @@
     </section>
 
     <!-- قسم المميزات (Features) -->
-    <section id="features" class="py-24 scroll-mt" style="border-top:1px solid #1b2234;background:rgba(8,11,20,0.5);">
+    <section id="features" class="py-24 scroll-mt" style="border-top:1px solid #1b2234;background:rgba(8,11,20,0.75);">
       <div class="container">
         
         <div class="text-center" style="max-width:640px;margin:0 auto 3.5rem auto;">
@@ -549,7 +510,7 @@
     </div>
   </div>
 
-  <!-- سكربت التحكم السلس -->
+  <!-- سكربت التحكم وتوليد خلفية النجوم الفضائية المتحركة -->
   <script>
     function scrollToSection(id) {
       var el = document.getElementById(id);
@@ -581,6 +542,64 @@
         document.body.style.overflow = 'auto';
       }
     });
+
+    /* محرك النجوم التفاعلي الفائق الخفة */
+    (function initStars() {
+      const canvas = document.getElementById('stars-bg');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w, h;
+      const stars = [];
+      const numStars = 65; // عدد مدروس ومثالي للأداء
+
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          size: Math.random() * 1.6 + 0.4,
+          speed: Math.random() * 0.35 + 0.1,
+          opacity: Math.random() * 0.7 + 0.2,
+          pulse: Math.random() * 0.02 + 0.005
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+
+        // توهج خلفي هادئ أزرق وأرجواني
+        const grad = ctx.createRadialGradient(w / 2, h * 0.25, 10, w / 2, h * 0.25, w * 0.6);
+        grad.addColorStop(0, 'rgba(37, 99, 235, 0.12)');
+        grad.addColorStop(0.5, 'rgba(99, 102, 241, 0.04)');
+        grad.addColorStop(1, 'rgba(3, 5, 12, 0)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        // رسم النجوم وتحديث حركتها
+        for (let i = 0; i < numStars; i++) {
+          const s = stars[i];
+          s.y -= s.speed;
+          if (s.y < 0) {
+            s.y = h;
+            s.x = Math.random() * w;
+          }
+          s.opacity += Math.sin(Date.now() * s.pulse) * 0.008;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(147, 197, 253, ${Math.max(0.1, Math.min(0.9, s.opacity))})`;
+          ctx.fill();
+        }
+
+        requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+    })();
   </script>
 
 </body>
