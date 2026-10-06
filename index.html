@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Alhelal Smart Expense | إدارة المصاريف والميزانية الشخصية بذكاء</title>
-  <meta name="description" content="تطبيق Alhelal Smart Expense - تتبع مصاريفك ونفقاتك اليومية بدقة وذكاء، حدد ميزانيتك الشهرية، واحصل على تقارير ورسوم بيانية فورية.">
-  <meta name="keywords" content="Alhelal Smart Expense, تتبع المصاريف, إدارة الأموال, تطبيق ميزانية, Expense Tracker, Personal Finance">
+  <title>Alhelal Smart Expense | المنظومة الذكية لإدارة الثروة والمصروفات</title>
+  <meta name="description" content="Alhelal Smart Expense - المنصة الرائدة لإدارة الميزانية الشخصية، تتبع التدفقات النقدية، وتحليلات مالية فائقة الدقة والذكاء.">
+  <meta name="keywords" content="Alhelal Smart Expense, إدارة الأموال, تتبع المصاريف, ذكاء مالي, FinTech, Wealth Management">
   <meta name="author" content="Alhelal Dev">
   <meta name="robots" content="index, follow">
 
@@ -15,39 +15,38 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.alhelalsmart.com/">
-  <meta property="og:title" content="Alhelal Smart Expense - تحكم بمصاريفك بذكاء">
-  <meta property="og:description" content="إدارتك المالية أصبحت أسهل وأذكى. متوفر عبر الويب وقريباً على Google Play.">
+  <meta property="og:title" content="Alhelal Smart Expense - قوة الذكاء المالي بين يديك">
+  <meta property="og:description" content="سيطرة مطلقة على كل تفاصيل ثروتك ونفقاتك بمنظومة سحابية ذكية وفائقة الأمان.">
   <meta property="og:image" content="https://www.alhelalsmart.com/icons/Icon-512.png">
 
-  <!-- Preconnect & Asynchronous Optimized Font Loading -->
+  <!-- الخطوط المحسّنة بدون حجب للرندر -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Tajawal:wght@400;500;700;800;900&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Tajawal:wght@400;500;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Tajawal:wght@400;500;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap">
   </noscript>
 
-  <!-- Complete Inlined Zero-Render-Blocking Modern CSS -->
   <style>
     *, ::after, ::before { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-family: 'Tajawal', system-ui, -apple-system, sans-serif; background-color: #03050c; color: #f1f5f9; }
-    body { background-color: #03050c; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; font-family: 'Tajawal', system-ui, -apple-system, sans-serif; background-color: #030712; color: #f8fafc; }
+    body { background-color: #030712; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
     .en-font { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
 
-    /* Canvas الخلفية الفضائية المتحركة */
-    #stars-bg {
+    /* Canvas الشبكة البانورامية التفاعلية 3D */
+    #mesh-canvas {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
     }
 
     /* Layout & Utilities */
-    .container { width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+    .container { width: 100%; max-width: 1220px; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; position: relative; z-index: 10; }
     .flex { display: flex; }
     .inline-flex { display: inline-flex; }
     .grid { display: grid; }
@@ -63,247 +62,235 @@
     .fixed { position: fixed; }
     .hidden { display: none !important; }
     .w-full { width: 100%; }
-    .shrink-0 { flex-shrink: 0; }
     .select-none { user-select: none; }
     .cursor-pointer { cursor: pointer; }
 
-    /* Cards & Glass Effects */
-    .glass-effect { background: rgba(12, 16, 29, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-    .gradient-border { background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(255, 255, 255, 0.03) 100%); }
-    .card-dark { background-color: #0c101d; border: 1px solid #1b2234; border-radius: 1.5rem; }
+    /* تأثيرات الزجاج الفاخر والتوهج */
+    .glass-nav { background: rgba(3, 7, 18, 0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .glass-card { background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1.75rem; }
+    .glass-tag { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 9999px; }
 
-    /* Unified Navigation Links with Subtle Hover & Active Micro-interaction */
+    /* أزرار التنقل مع تأثيرات ناعمة */
     .nav-btn {
-      color: #cbd5e1;
-      font-size: 0.92rem;
+      color: #94a3b8;
+      font-size: 0.95rem;
       font-weight: 600;
-      padding: 0.5rem 0.9rem;
-      border-radius: 0.65rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
       background: transparent;
       border: 1px solid transparent;
       cursor: pointer;
-      user-select: none;
       font-family: inherit;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .nav-btn:hover {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-    .nav-btn:active {
-      transform: scale(0.95);
-      background: rgba(255, 255, 255, 0.12);
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      border-color: rgba(56, 189, 248, 0.2);
     }
 
-    /* Buttons */
-    .btn-brand {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    /* الأزرار الرئيسية */
+    .btn-glow {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #0284c7 100%);
       color: #ffffff;
-      font-weight: 700;
-      border-radius: 0.875rem;
+      font-weight: 800;
+      border-radius: 1rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.65rem;
       text-decoration: none;
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       cursor: pointer;
       user-select: none;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 25px rgba(37, 99, 235, 0.45);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .btn-brand:hover {
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-      filter: brightness(1.08);
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(37, 99, 235, 0.7);
+      filter: brightness(1.1);
     }
-    .btn-brand:active {
-      transform: scale(0.96);
-    }
+    .btn-glow:active { transform: translateY(0) scale(0.97); }
 
-    .btn-outline {
-      background-color: #0c101d;
-      border: 1px solid #1b2234;
-      color: #ffffff;
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
       border-radius: 1rem;
       cursor: pointer;
       user-select: none;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .btn-outline:hover {
-      border-color: #3b82f6;
-      background-color: #11172a;
-    }
-    .btn-outline:active {
-      transform: scale(0.96);
+    .btn-secondary:hover {
+      border-color: #38bdf8;
+      background: rgba(30, 41, 59, 0.9);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
     }
 
-    /* Spacings & Typography */
-    .min-hero-card { min-height: 440px; }
-    .ping-circle { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background-color: #60a5fa; margin-left: 0.5rem; }
-    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-    .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-    .scroll-mt { scroll-margin-top: 6rem; }
-
-    .text-brand { color: #60a5fa; }
-    .text-sub { color: #cbd5e1; }
-    .text-emerald { color: #34d399; }
-    .text-rose { color: #fb7185; }
-    .gradient-text { background: linear-gradient(to left, #93c5fd, #c7d2fe, #5eead4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    /* النصوص والعناوين */
+    .gradient-hero-text {
+      background: linear-gradient(135deg, #ffffff 20%, #93c5fd 60%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-sub { color: #94a3b8; }
+    .text-accent { color: #38bdf8; }
 
     /* Modals */
-    .modal-backdrop { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 999; top: 0; left: 0; right: 0; bottom: 0; padding: 1rem; }
-    .modal-box { max-height: 85vh; width: 100%; max-width: 650px; background-color: #0c101d; border: 1px solid #1b2234; border-radius: 1.5rem; display: flex; flex-direction: column; overflow: hidden; }
+    .modal-backdrop { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 999; top: 0; left: 0; right: 0; bottom: 0; padding: 1.25rem; }
+    .modal-box { max-height: 85vh; width: 100%; max-width: 650px; background-color: #0b0f19; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 1.75rem; display: flex; flex-direction: column; overflow: hidden; }
 
     @media (min-width: 768px) {
       .md-flex { display: flex !important; }
       .md-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
       .md-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-      .md-title { font-size: 3.8rem !important; line-height: 1.2 !important; }
+      .hero-title { font-size: 3.9rem !important; line-height: 1.2 !important; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- شاشة الكانفاس للنجوم المتحركة عالية الأداء -->
-  <canvas id="stars-bg"></canvas>
+  <!-- كانفاس الشبكة البانورامية ثلاثية الأبعاد المحسنة كلياً -->
+  <canvas id="mesh-canvas"></canvas>
 
-  <!-- شريط التنقل (Navbar) -->
-  <header style="position:fixed;top:0;left:0;right:0;height:76px;z-index:50;background:rgba(5,7,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #1b2234;">
+  <!-- شريط الملاحة العصري (Navbar) -->
+  <header class="fixed glass-nav" style="top:0;left:0;right:0;height:80px;z-index:50;">
     <div class="container flex items-center justify-between" style="height:100%;">
       
-      <!-- شعار الهلال المخصص مع تأثير ضغط ناعم -->
-      <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center select-none cursor-pointer" style="background:none;border:none;gap:0.75rem;text-align:right;transition:transform 0.2s;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'" aria-label="الرجوع لأعلى الصفحة">
-        <div style="width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg, #1d4ed8, #4338ca);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(37,99,235,0.3);border:1px solid rgba(255,255,255,0.1);">
+      <!-- شعار الهلال Alhelal Smart المطور -->
+      <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center select-none cursor-pointer" style="background:none;border:none;gap:0.85rem;text-align:right;" aria-label="الرجوع للأعلى">
+        <div style="width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg, #1e40af, #3b82f6);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,99,235,0.45);border:1px solid rgba(255,255,255,0.2);">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8A9.06 9.06 0 0 0 12 3Z" fill="#60a5fa"/>
+            <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8A9.06 9.06 0 0 0 12 3Z" fill="#38bdf8"/>
             <path d="M19 4.5l.7 1.4 1.5.2-1.1 1.1.3 1.5-1.4-.7-1.4.7.3-1.5-1.1-1.1 1.5-.2.7-1.4z" fill="#facc15"/>
           </svg>
         </div>
         <div>
-          <span style="font-size:1.25rem;font-weight:900;letter-spacing:-0.02em;color:#fff;" class="en-font">Alhelal<span class="text-brand">Smart</span></span>
-          <div style="font-size:9px;color:#94a3b8;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-top:-2px;">Expense Manager</div>
+          <span style="font-size:1.35rem;font-weight:900;letter-spacing:-0.02em;color:#fff;" class="en-font">Alhelal<span class="text-accent">Smart</span></span>
+          <div style="font-size:9.5px;color:#94a3b8;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-top:-2px;">Wealth & Expense Manager</div>
         </div>
       </button>
 
-      <!-- روابط القائمة موحدة ونقية -->
-      <nav class="hidden md-flex items-center select-none" style="gap:0.5rem;" aria-label="التنقل الرئيسي">
-        <button type="button" onclick="scrollToSection('features')" class="nav-btn">المميزات</button>
-        <button type="button" onclick="scrollToSection('about')" class="nav-btn">عن التطبيق</button>
+      <!-- روابط التنقل -->
+      <nav class="hidden md-flex items-center select-none" style="gap:0.75rem;" aria-label="القائمة الرئيسية">
+        <button type="button" onclick="scrollToSection('features')" class="nav-btn">المميزات الاستثنائية</button>
+        <button type="button" onclick="scrollToSection('about')" class="nav-btn">رؤيتنا</button>
         <button type="button" onclick="openModal('privacyModal')" class="nav-btn">الخصوصية</button>
         <button type="button" onclick="openModal('termsModal')" class="nav-btn">الشروط</button>
       </nav>
 
-      <!-- زر فتح نسخة الويب -->
-      <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-brand select-none" style="padding:0.65rem 1.25rem;font-size:0.875rem;" aria-label="فتح نسخة الويب في نافذة جديدة">
+      <!-- زر الدخول لنسخة الويب -->
+      <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-glow select-none" style="padding:0.75rem 1.4rem;font-size:0.9rem;" aria-label="فتح التطبيق">
         <span>فتح نسخة الويب</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
       </a>
     </div>
   </header>
 
-  <!-- المعلم الرئيسي للمحتوى -->
+  <!-- المحتوى الرئيسي -->
   <main>
     
-    <!-- القسم الترحيبي (Hero Section) -->
-    <section style="padding-top:130px;padding-bottom:70px;text-align:center;">
+    <!-- القسم الترحيبي (Hero Section) الفاخر بالنص الجديد -->
+    <section style="padding-top:160px;padding-bottom:90px;text-align:center;">
       <div class="container">
         
-        <div class="inline-flex items-center glass-effect select-none" style="padding:0.45rem 1.1rem;border-radius:9999px;border:1px solid #1b2234;font-size:0.8rem;font-weight:600;color:#93c5fd;margin-bottom:1.75rem;">
-          <span class="ping-circle" aria-hidden="true"></span>
-          <span>الجيل الجديد لإدارة المصروفات الشخصية والذكاء المالي</span>
+        <div class="inline-flex items-center glass-tag select-none" style="padding:0.55rem 1.3rem;font-size:0.85rem;font-weight:700;color:#38bdf8;margin-bottom:2rem;">
+          <span style="width:8px;height:8px;border-radius:50%;background:#38bdf8;box-shadow:0 0 12px #38bdf8;margin-left:0.6rem;" aria-hidden="true"></span>
+          <span>المنظومة المالية الذكية فائقة السرعة والأمان</span>
         </div>
 
-        <h1 style="font-size:2.4rem;font-weight:900;line-height:1.25;color:#fff;max-width:850px;margin:0 auto;" class="md-title">
-          إدارتك المالية أصبحت <br>
-          <span class="gradient-text">أبسط، أسرع، وأكثر ذكاءً</span>
+        <!-- النص الجديد والفخم كلياً -->
+        <h1 class="hero-title" style="font-size:2.5rem;font-weight:900;line-height:1.25;color:#fff;max-width:960px;margin:0 auto;">
+          قوة الذكاء المالي بين يديك.. <br>
+          <span class="gradient-hero-text">سيطرة مطلقة على كل تفاصيل ثروتك</span>
         </h1>
 
-        <p class="text-sub" style="margin-top:1.5rem;font-size:1.1rem;line-height:1.7;max-width:680px;margin-left:auto;margin-right:auto;">
-          تحكم في كل ليرة ومصروف بنقرة زر. تتبع مصادر دخلك، حدد ميزانيتك الشهرية، واحصل على تقارير ورسوم بيانية فائقة الوضوح تساعدك على التوفير.
+        <p class="text-sub" style="margin-top:1.75rem;font-size:1.15rem;line-height:1.8;max-width:720px;margin-left:auto;margin-right:auto;">
+          تجاوز جداول الحسابات المعقدة. تتبع نفقاتك بلمسة واحدة، خطط لميزانيتك بدقة متناهية، واكتشف قرارات مالية مدروسة تصنع مستقبلك بثقة.
         </p>
 
-        <!-- أزرار الإجراء مع تأثير الضغط -->
-        <div class="flex items-center justify-center flex-wrap" style="gap:1rem;margin-top:2.25rem;">
-          <button type="button" onclick="openModal('downloadModal')" class="btn-outline flex items-center select-none" style="padding:0.75rem 1.5rem;gap:0.75rem;text-align:right;" aria-label="تحميل التطبيق من جوجل بلاي قريباً">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" fill="#3b82f6"/><path d="M16.81 15.12L13.69 12L3.84 2.15C4.03 2.06 4.26 2 4.5 2C4.94 2 5.36 2.19 5.66 2.49L17.82 9.51L16.81 15.12Z" fill="#60a5fa"/><path d="M16.81 8.88L5.66 21.51C5.36 21.81 4.94 22 4.5 22C4.26 22 4.03 21.94 3.84 21.85L13.69 12L16.81 8.88Z" fill="#1d4ed8"/></svg>
+        <!-- أزرار الإجراء السريعة -->
+        <div class="flex items-center justify-center flex-wrap" style="gap:1.25rem;margin-top:2.75rem;">
+          <button type="button" onclick="openModal('downloadModal')" class="btn-secondary flex items-center select-none" style="padding:0.85rem 1.6rem;gap:0.85rem;text-align:right;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" fill="#38bdf8"/><path d="M16.81 15.12L13.69 12L3.84 2.15C4.03 2.06 4.26 2 4.5 2C4.94 2 5.36 2.19 5.66 2.49L17.82 9.51L16.81 15.12Z" fill="#60a5fa"/><path d="M16.81 8.88L5.66 21.51C5.36 21.81 4.94 22 4.5 22C4.26 22 4.03 21.94 3.84 21.85L13.69 12L16.81 8.88Z" fill="#2563eb"/></svg>
             <div>
-              <div style="font-size:10px;color:#94a3b8;font-weight:700;text-transform:uppercase;">قريباً على</div>
-              <div style="font-size:0.95rem;font-weight:800;color:#fff;" class="en-font">Google Play</div>
+              <div style="font-size:10px;color:#94a3b8;font-weight:700;text-transform:uppercase;">قريباً عبر</div>
+              <div style="font-size:1rem;font-weight:800;color:#fff;" class="en-font">Google Play</div>
             </div>
           </button>
 
-          <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-brand select-none" style="padding:0.9rem 1.75rem;font-size:0.95rem;" aria-label="تجربة تطبيق الويب المباشر في نافذة جديدة">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <span>تجربة تطبيق الويب المباشر</span>
+          <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-glow select-none" style="padding:1rem 2rem;font-size:1rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>ابدأ تجربة المنصة مجاناً</span>
           </a>
         </div>
 
-        <!-- واجهة المحاكاة العصرية -->
-        <div class="min-hero-card" style="margin-top:3.5rem;max-width:880px;margin-left:auto;margin-right:auto;">
-          <div class="gradient-border" style="border-radius:1.75rem;padding:0.75rem;box-shadow:0 25px 50px -12px rgba(5,15,40,0.6);">
-            <div class="card-dark" style="padding:1.75rem;text-align:right;">
+        <!-- بطاقة المحاكاة التفاعلية الفاخرة -->
+        <div style="margin-top:4rem;max-width:920px;margin-left:auto;margin-right:auto;">
+          <div style="padding:1px;border-radius:2rem;background:linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(37, 99, 235, 0.3) 100%);box-shadow:0 30px 60px -15px rgba(0,0,0,0.8);">
+            <div class="glass-card" style="padding:2rem;text-align:right;">
               
-              <div class="flex items-center justify-between" style="border-bottom:1px solid #1b2234;padding-bottom:1.25rem;">
-                <div class="flex items-center" style="gap:0.75rem;">
-                  <div style="width:38px;height:38px;border-radius:9999px;background:#1e293b;display:flex;align-items:center;justify-content:center;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div class="flex items-center justify-between" style="border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:1.5rem;">
+                <div class="flex items-center" style="gap:0.85rem;">
+                  <div style="width:42px;height:42px;border-radius:12px;background:rgba(56, 189, 248, 0.12);display:flex;align-items:center;justify-content:center;border:1px solid rgba(56, 189, 248, 0.2);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                   </div>
                   <div>
-                    <div style="font-size:0.95rem;font-weight:700;color:#fff;">المحفظة الشخصية</div>
-                    <div style="font-size:0.75rem;color:#cbd5e1;">تحديث فوري وسحابي آمن</div>
+                    <div style="font-size:1.05rem;font-weight:800;color:#fff;">المحفظة الاستثمارية والشخصية</div>
+                    <div style="font-size:0.8rem;color:#94a3b8;">تزامن سحابي فوري ومشفر بتقنية 256-bit</div>
                   </div>
                 </div>
-                <span style="font-size:0.75rem;font-weight:700;color:#34d399;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);padding:0.25rem 0.65rem;border-radius:8px;">
-                  الميزانية متوازنة
+                <span style="font-size:0.8rem;font-weight:700;color:#34d399;background:rgba(52, 211, 153, 0.12);border:1px solid rgba(52, 211, 153, 0.3);padding:0.35rem 0.8rem;border-radius:10px;">
+                  المؤشرات إيجابية
                 </span>
               </div>
 
-              <!-- بطاقات الأرقام -->
-              <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:0.85rem;margin-top:1.25rem;margin-bottom:1.25rem;">
-                <div style="background:rgba(15,23,42,0.6);border:1px solid #1b2234;border-radius:12px;padding:1rem;">
-                  <div style="font-size:0.75rem;color:#cbd5e1;">إجمالي الرصيد</div>
-                  <div style="font-size:1.5rem;font-weight:800;color:#fff;margin-top:0.25rem;" class="en-font">$8,450.00</div>
+              <!-- بطاقات الأرقام والمؤشرات المالية -->
+              <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:1rem;margin-top:1.5rem;margin-bottom:1.5rem;">
+                <div style="background:rgba(3, 7, 18, 0.6);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:1.25rem;">
+                  <div style="font-size:0.8rem;color:#94a3b8;">صافي السيولة المتاحة</div>
+                  <div style="font-size:1.75rem;font-weight:900;color:#fff;margin-top:0.35rem;" class="en-font">$12,850.00</div>
                 </div>
-                <div style="background:rgba(15,23,42,0.6);border:1px solid #1b2234;border-radius:12px;padding:1rem;">
-                  <div style="font-size:0.75rem;color:#34d399;font-weight:600;">+ الدخل هذا الشهر</div>
-                  <div style="font-size:1.5rem;font-weight:800;color:#34d399;margin-top:0.25rem;" class="en-font">+$3,200.00</div>
+                <div style="background:rgba(3, 7, 18, 0.6);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:1.25rem;">
+                  <div style="font-size:0.8rem;color:#34d399;font-weight:700;">+ التدفقات الداخلة</div>
+                  <div style="font-size:1.75rem;font-weight:900;color:#34d399;margin-top:0.35rem;" class="en-font">+$4,600.00</div>
                 </div>
-                <div style="background:rgba(15,23,42,0.6);border:1px solid #1b2234;border-radius:12px;padding:1rem;">
-                  <div style="font-size:0.75rem;color:#fb7185;font-weight:600;">- إجمالي المصاريف</div>
-                  <div style="font-size:1.5rem;font-weight:800;color:#fb7185;margin-top:0.25rem;" class="en-font">-$1,120.00</div>
+                <div style="background:rgba(3, 7, 18, 0.6);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:1.25rem;">
+                  <div style="font-size:0.8rem;color:#fb7185;font-weight:700;">- النفقات والمصاريف</div>
+                  <div style="font-size:1.75rem;font-weight:900;color:#fb7185;margin-top:0.35rem;" class="en-font">-$1,340.00</div>
                 </div>
               </div>
 
-              <!-- قائمة المعاملات -->
-              <div style="display:flex;flex-direction:column;gap:0.65rem;">
-                <div style="font-size:0.75rem;font-weight:700;color:#cbd5e1;text-transform:uppercase;letter-spacing:0.05em;">آخر المصاريف المدخلة ذكياً</div>
+              <!-- العمليات المسجلة ذكياً -->
+              <div style="display:flex;flex-direction:column;gap:0.75rem;">
+                <div style="font-size:0.8rem;font-weight:800;color:#94a3b8;letter-spacing:0.05em;text-transform:uppercase;">أحدث العمليات المؤكدة</div>
                 
-                <div class="flex items-center justify-between" style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:0.75rem 1rem;">
-                  <div class="flex items-center" style="gap:0.75rem;">
-                    <div style="width:34px;height:34px;border-radius:8px;background:rgba(244,63,94,0.1);display:flex;align-items:center;justify-content:center;">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                <div class="flex items-center justify-between" style="background:rgba(3, 7, 18, 0.5);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:0.9rem 1.2rem;">
+                  <div class="flex items-center" style="gap:0.85rem;">
+                    <div style="width:38px;height:38px;border-radius:10px;background:rgba(251, 113, 133, 0.12);display:flex;align-items:center;justify-content:center;">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                     </div>
                     <div>
-                      <div style="font-size:0.875rem;font-weight:700;color:#fff;">مشتريات بقالة وسوبرماركت</div>
-                      <div style="font-size:0.75rem;color:#cbd5e1;">اليوم، 04:30 م</div>
+                      <div style="font-size:0.95rem;font-weight:700;color:#fff;">مشتريات وتجهيزات منزلية</div>
+                      <div style="font-size:0.78rem;color:#94a3b8;">اليوم، 04:30 م</div>
                     </div>
                   </div>
-                  <div style="font-size:0.9rem;font-weight:700;color:#fb7185;" class="en-font">- $48.50</div>
+                  <div style="font-size:1rem;font-weight:800;color:#fb7185;" class="en-font">- $48.50</div>
                 </div>
 
-                <div class="flex items-center justify-between" style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:0.75rem 1rem;">
-                  <div class="flex items-center" style="gap:0.75rem;">
-                    <div style="width:34px;height:34px;border-radius:8px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <div class="flex items-center justify-between" style="background:rgba(3, 7, 18, 0.5);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:0.9rem 1.2rem;">
+                  <div class="flex items-center" style="gap:0.85rem;">
+                    <div style="width:38px;height:38px;border-radius:10px;background:rgba(56, 189, 248, 0.12);display:flex;align-items:center;justify-content:center;">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     </div>
                     <div>
-                      <div style="font-size:0.875rem;font-weight:700;color:#fff;">فواتير وخدمات شهرية</div>
-                      <div style="font-size:0.75rem;color:#cbd5e1;">أمس، 02:15 م</div>
+                      <div style="font-size:0.95rem;font-weight:700;color:#fff;">اشتراكات وخوادم سحابية</div>
+                      <div style="font-size:0.78rem;color:#94a3b8;">أمس، 02:15 م</div>
                     </div>
                   </div>
-                  <div style="font-size:0.9rem;font-weight:700;color:#fb7185;" class="en-font">- $120.00</div>
+                  <div style="font-size:1rem;font-weight:800;color:#fb7185;" class="en-font">- $120.00</div>
                 </div>
               </div>
 
@@ -314,97 +301,97 @@
       </div>
     </section>
 
-    <!-- قسم المميزات (Features) -->
-    <section id="features" class="py-24 scroll-mt" style="border-top:1px solid #1b2234;background:rgba(8,11,20,0.75);">
+    <!-- قسم المميزات الاستثنائية -->
+    <section id="features" style="padding:6rem 0;border-top:1px solid rgba(255,255,255,0.08);background:rgba(3, 7, 18, 0.85);">
       <div class="container">
         
-        <div class="text-center" style="max-width:640px;margin:0 auto 3.5rem auto;">
-          <span style="font-size:0.8rem;font-weight:800;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:0.5rem;">قدرات فائقة</span>
-          <h2 style="font-size:2rem;font-weight:900;color:#fff;">كل ما يلزمك للتحكم الكامل بأموالك</h2>
-          <p class="text-sub" style="margin-top:0.75rem;font-size:1rem;line-height:1.6;">تم بناء النظام ليكون بديهياً وسريعاً، ليمنحك تقارير دقيقة دون إضاعة وقتك في حسابات معقدة.</p>
+        <div class="text-center" style="max-width:680px;margin:0 auto 4rem auto;">
+          <span style="font-size:0.85rem;font-weight:800;color:#38bdf8;text-transform:uppercase;letter-spacing:0.12em;display:block;margin-bottom:0.6rem;">بنية تحتية متطورة</span>
+          <h2 style="font-size:2.2rem;font-weight:900;color:#fff;">كل ما يلزمك للتحكم المطلق بمستقبلك المالي</h2>
+          <p class="text-sub" style="margin-top:0.85rem;font-size:1.05rem;line-height:1.7;">صُممت المنظومة لتمنحك رؤية فورية وواضحة لتدفقاتك المالية بأعلى سرعة وأقل جهد ممكن.</p>
         </div>
 
-        <div class="grid md-grid-3" style="grid-template-columns:1fr;gap:1.5rem;">
+        <div class="grid md-grid-3" style="grid-template-columns:1fr;gap:1.75rem;">
           
-          <div class="card-dark" style="padding:2rem;">
-            <div style="width:48px;height:48px;border-radius:14px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
+          <div class="glass-card" style="padding:2.25rem;">
+            <div style="width:52px;height:52px;border-radius:16px;background:rgba(56, 189, 248, 0.12);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(56, 189, 248, 0.2);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
             </div>
-            <h3 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:0.75rem;">تسجيل المصاريف بسرعة فائقة</h3>
-            <p class="text-sub" style="font-size:0.9rem;line-height:1.6;">أضف المعاملات بنقرتين فقط مع تصنيفات مخصصة (طعام، فواتير، سفر، تسوق) تساعدك على مراقبة نمط إنفاقك بدقة.</p>
+            <h3 style="font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:0.85rem;">تسجيل لحظي فائق السرعة</h3>
+            <p class="text-sub" style="font-size:0.95rem;line-height:1.7;">إضافة سريعة لأي عملية مالية خلال ثوانٍ معدودة مع تصنيفات تفاعلية مخصصة تناسب أسلوب حياتك.</p>
           </div>
 
-          <div class="card-dark" style="padding:2rem;">
-            <div style="width:48px;height:48px;border-radius:14px;background:rgba(99,102,241,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" aria-hidden="true"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+          <div class="glass-card" style="padding:2.25rem;">
+            <div style="width:52px;height:52px;border-radius:16px;background:rgba(99, 102, 241, 0.12);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(99, 102, 241, 0.2);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" aria-hidden="true"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
             </div>
-            <h3 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:0.75rem;">تحليلات ورسوم تفاعلية</h3>
-            <p class="text-sub" style="font-size:0.9rem;line-height:1.6;">شاهد توزيع نفقاتك الشهرية بالنسب المئوية والرسوم البيانية المباشرة لمعرفة البنود التي تستهلك الجزء الأكبر من ميزانيتك.</p>
+            <h3 style="font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:0.85rem;">رسوم بيانية وتحليلات دقيقة</h3>
+            <p class="text-sub" style="font-size:0.95rem;line-height:1.7;">رؤية فورية لتوزيع ميزانيتك ومصادر الإنفاق لتحديد فرص التوفير وتقليل الهدر المالي بذكاء.</p>
           </div>
 
-          <div class="card-dark" style="padding:2rem;">
-            <div style="width:48px;height:48px;border-radius:14px;background:rgba(20,184,166,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div class="glass-card" style="padding:2.25rem;">
+            <div style="width:52px;height:52px;border-radius:16px;background:rgba(45, 212, 191, 0.12);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(45, 212, 191, 0.2);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             </div>
-            <h3 style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:0.75rem;">مزامنة سحابية وحماية مطلقة</h3>
-            <p class="text-sub" style="font-size:0.9rem;line-height:1.6;">بياناتك المالية مشفرة بالكامل ومحفوظة سحابياً، لتتمكن من الوصول لسجلاتك بأمان من الويب ومن هاتفك في أي لحظة.</p>
+            <h3 style="font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:0.85rem;">تشفير مطلق وأمان سحابي</h3>
+            <p class="text-sub" style="font-size:0.95rem;line-height:1.7;">حماية مصرفية صارمة لكل سجلاتك المالية مع مزامنة آنية على كافة أجهزتك دون مشاركة أي بيانات إطلاقاً.</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- قسم عن التطبيق (About) -->
-    <section id="about" class="py-24 scroll-mt" style="border-top:1px solid #1b2234;">
+    <!-- قسم الرؤية (About) -->
+    <section id="about" style="padding:6rem 0;border-top:1px solid rgba(255,255,255,0.08);">
       <div class="container">
-        <div class="grid md-grid-2" style="grid-template-columns:1fr;gap:3rem;align-items:center;">
+        <div class="grid md-grid-2" style="grid-template-columns:1fr;gap:3.5rem;align-items:center;">
           
           <div>
-            <span style="font-size:0.8rem;font-weight:800;color:#60a5fa;text-transform:uppercase;letter-spacing:0.1em;display:block;">رؤيتنا</span>
-            <h2 style="font-size:2rem;font-weight:900;color:#fff;margin-top:0.5rem;line-height:1.3;">تطبيق صُمم لمساعدتك على الادخار وتحقيق الاستقرار المالي</h2>
-            <p class="text-sub" style="margin-top:1.25rem;font-size:1rem;line-height:1.7;">
-              انطلق مشروع <strong style="color:#fff;">Alhelal Smart Expense</strong> لسد الفجوة بين تعقيد التطبيقات المصرفية وصعوبة جداول الإكسل التقليدية. هدفنا توفير أداة يومية ذكية وخفيفة الوزن تمنح كل شخص السيطرة الكاملة على أمواله ومساعدته على ادخار المزيد للمستقبل.
+            <span style="font-size:0.85rem;font-weight:800;color:#38bdf8;text-transform:uppercase;letter-spacing:0.12em;display:block;">فلسفتنا المالية</span>
+            <h2 style="font-size:2.2rem;font-weight:900;color:#fff;margin-top:0.6rem;line-height:1.3;">ابتكار صُمم لتمكينك من تحقيق استقلالك المالي</h2>
+            <p class="text-sub" style="margin-top:1.5rem;font-size:1.05rem;line-height:1.8;">
+              هدفنا في <strong style="color:#fff;">Alhelal Smart Expense</strong> هو توفير أحدث الحلول الرقمية التي تجمع بين السهولة الفائقة والذكاء التحليلي، لنمنحك القوة للتحكم في مستقبلك المالي والادخار بوعي واطمئنان.
             </p>
 
-            <div style="margin-top:1.75rem;display:flex;flex-direction:column;gap:1rem;">
-              <div class="flex items-center" style="gap:0.75rem;">
-                <div style="width:24px;height:24px;border-radius:9999px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;color:#60a5fa;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;">
+              <div class="flex items-center" style="gap:0.85rem;">
+                <div style="width:26px;height:26px;border-radius:50%;background:rgba(56, 189, 248, 0.15);display:flex;align-items:center;justify-content:center;color:#38bdf8;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <div style="font-size:0.92rem;color:#cbd5e1;"><strong style="color:#fff;">سهولة تامة:</strong> لا تتطلب أي خبرة محاسبية سابقة للبدء والتسجيل.</div>
+                <div style="font-size:0.95rem;color:#cbd5e1;"><strong style="color:#fff;">بساطة واضحة:</strong> لا تتطلب خبرة محاسبية للبدء والتتبع المالي.</div>
               </div>
-              <div class="flex items-center" style="gap:0.75rem;">
-                <div style="width:24px;height:24px;border-radius:9999px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;color:#60a5fa;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <div class="flex items-center" style="gap:0.85rem;">
+                <div style="width:26px;height:26px;border-radius:50%;background:rgba(56, 189, 248, 0.15);display:flex;align-items:center;justify-content:center;color:#38bdf8;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <div style="font-size:0.92rem;color:#cbd5e1;"><strong style="color:#fff;">خصوصية 100%:</strong> لا نشارك بياناتك المالية مع أي جهة إعلانية أو طرف خارجي.</div>
+                <div style="font-size:0.95rem;color:#cbd5e1;"><strong style="color:#fff;">أعلى معايير الخصوصية:</strong> بياناتك المالية مشفرة وخاصة بك وحدك 100%.</div>
               </div>
-              <div class="flex items-center" style="gap:0.75rem;">
-                <div style="width:24px;height:24px;border-radius:9999px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;color:#60a5fa;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <div class="flex items-center" style="gap:0.85rem;">
+                <div style="width:26px;height:26px;border-radius:50%;background:rgba(56, 189, 248, 0.15);display:flex;align-items:center;justify-content:center;color:#38bdf8;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <div style="font-size:0.92rem;color:#cbd5e1;"><strong style="color:#fff;">وصول عبر كل الأجهزة:</strong> استخدم التطبيق من متصفح الكمبيوتر أو الهاتف بسلاسة.</div>
+                <div style="font-size:0.95rem;color:#cbd5e1;"><strong style="color:#fff;">وصول فوري متكامل:</strong> توافق كامل مع متصفحات الحواسيب والأجهزة الذكية.</div>
               </div>
             </div>
           </div>
 
-          <!-- إحصائيات بالأرقام -->
-          <div class="grid" style="grid-template-columns:repeat(2, 1fr);gap:1rem;">
-            <div class="card-dark text-center" style="padding:1.5rem;">
-              <div style="font-size:2rem;font-weight:900;color:#60a5fa;" class="en-font">99.9%</div>
-              <div style="font-size:0.8rem;color:#cbd5e1;font-weight:700;margin-top:0.5rem;">جاهزية واستقرار سحابي</div>
+          <!-- بطاقات الأرقام والجاهزية -->
+          <div class="grid" style="grid-template-columns:repeat(2, 1fr);gap:1.25rem;">
+            <div class="glass-card text-center" style="padding:1.75rem;">
+              <div style="font-size:2.2rem;font-weight:900;color:#38bdf8;" class="en-font">99.9%</div>
+              <div style="font-size:0.85rem;color:#94a3b8;font-weight:700;margin-top:0.5rem;">استقرار وجاهزية سحابية</div>
             </div>
-            <div class="card-dark text-center" style="padding:1.5rem;">
-              <div style="font-size:2rem;font-weight:900;color:#34d399;" class="en-font">256-bit</div>
-              <div style="font-size:0.8rem;color:#cbd5e1;font-weight:700;margin-top:0.5rem;">تشفير وأمان البيانات</div>
+            <div class="glass-card text-center" style="padding:1.75rem;">
+              <div style="font-size:2.2rem;font-weight:900;color:#34d399;" class="en-font">256-bit</div>
+              <div style="font-size:0.85rem;color:#94a3b8;font-weight:700;margin-top:0.5rem;">تشفير مصرفي للبيانات</div>
             </div>
-            <div class="card-dark text-center" style="padding:1.5rem;">
-              <div style="font-size:2rem;font-weight:900;color:#818cf8;" class="en-font">&lt;0.5s</div>
-              <div style="font-size:0.8rem;color:#cbd5e1;font-weight:700;margin-top:0.5rem;">سرعة استجابة فائقة</div>
+            <div class="glass-card text-center" style="padding:1.75rem;">
+              <div style="font-size:2.2rem;font-weight:900;color:#818cf8;" class="en-font">&lt;0.4s</div>
+              <div style="font-size:0.85rem;color:#94a3b8;font-weight:700;margin-top:0.5rem;">سرعة استجابة فائقة</div>
             </div>
-            <div class="card-dark text-center" style="padding:1.5rem;">
-              <div style="font-size:2rem;font-weight:900;color:#2dd4bf;" class="en-font">100%</div>
-              <div style="font-size:0.8rem;color:#cbd5e1;font-weight:700;margin-top:0.5rem;">مجاني للمميزات الأساسية</div>
+            <div class="glass-card text-center" style="padding:1.75rem;">
+              <div style="font-size:2.2rem;font-weight:900;color:#2dd4bf;" class="en-font">100%</div>
+              <div style="font-size:0.85rem;color:#94a3b8;font-weight:700;margin-top:0.5rem;">مجاني للمميزات الأساسية</div>
             </div>
           </div>
 
@@ -415,32 +402,31 @@
   </main>
 
   <!-- التذييل (Footer) -->
-  <footer style="border-top:1px solid #1b2234;background:#03050c;padding:3rem 0;">
+  <footer style="border-top:1px solid rgba(255,255,255,0.08);background:#02040a;padding:3.5rem 0;">
     <div class="container">
       
-      <div class="flex items-center justify-between flex-wrap" style="gap:1.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(27,34,52,0.8);">
-        <!-- الشعار في التذييل -->
-        <div class="flex items-center" style="gap:0.75rem;">
-          <div style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg, #1d4ed8, #4338ca);display:flex;align-items:center;justify-content:center;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8A9.06 9.06 0 0 0 12 3Z" fill="#60a5fa"/>
+      <div class="flex items-center justify-between flex-wrap" style="gap:1.5rem;padding-bottom:2.25rem;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div class="flex items-center" style="gap:0.85rem;">
+          <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg, #1e40af, #3b82f6);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8A9.06 9.06 0 0 0 12 3Z" fill="#38bdf8"/>
               <path d="M19 4.5l.7 1.4 1.5.2-1.1 1.1.3 1.5-1.4-.7-1.4.7.3-1.5-1.1-1.1 1.5-.2.7-1.4z" fill="#facc15"/>
             </svg>
           </div>
-          <span style="font-size:1.15rem;font-weight:800;color:#fff;" class="en-font">Alhelal<span class="text-brand">Smart</span></span>
+          <span style="font-size:1.25rem;font-weight:900;color:#fff;" class="en-font">Alhelal<span class="text-accent">Smart</span></span>
         </div>
 
-        <nav class="flex items-center flex-wrap" style="gap:0.5rem;" aria-label="روابط التذييل">
+        <nav class="flex items-center flex-wrap" style="gap:0.75rem;" aria-label="روابط سريعة">
           <button type="button" onclick="scrollToSection('features')" class="nav-btn">المميزات</button>
-          <button type="button" onclick="scrollToSection('about')" class="nav-btn">عن التطبيق</button>
+          <button type="button" onclick="scrollToSection('about')" class="nav-btn">رؤيتنا</button>
           <button type="button" onclick="openModal('privacyModal')" class="nav-btn">سياسة الخصوصية</button>
           <button type="button" onclick="openModal('termsModal')" class="nav-btn">شروط الاستخدام</button>
         </nav>
       </div>
 
-      <div class="flex items-center justify-between flex-wrap" style="padding-top:2rem;font-size:0.78rem;color:#cbd5e1;gap:1rem;">
+      <div class="flex items-center justify-between flex-wrap" style="padding-top:2.25rem;font-size:0.85rem;color:#94a3b8;gap:1rem;">
         <p>© 2026 Alhelal Smart Expense. جميع الحقوق محفوظة.</p>
-        <p class="en-font">Crafted with precision by Alhelal Dev</p>
+        <p class="en-font">Engineered with precision by Alhelal Dev</p>
       </div>
 
     </div>
@@ -449,25 +435,23 @@
   <!-- نافذة الخصوصية (Privacy Policy) -->
   <div id="privacyModal" class="fixed modal-backdrop hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
     <div class="modal-box text-right">
-      <div class="flex items-center justify-between" style="padding:1.25rem 1.5rem;border-bottom:1px solid #1b2234;">
-        <h2 id="privacyTitle" style="font-size:1.15rem;font-weight:800;color:#fff;">سياسة الخصوصية (Privacy Policy)</h2>
-        <button type="button" onclick="closeModal('privacyModal')" class="nav-btn" style="padding:6px;" aria-label="إغلاق نافذة الخصوصية">
+      <div class="flex items-center justify-between" style="padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.08);">
+        <h2 id="privacyTitle" style="font-size:1.15rem;font-weight:800;color:#fff;">سياسة الخصوصية وحماية البيانات</h2>
+        <button type="button" onclick="closeModal('privacyModal')" class="nav-btn" style="padding:6px;" aria-label="إغلاق">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <div style="padding:1.5rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem;font-size:0.875rem;color:#cbd5e1;line-height:1.7;">
+      <div style="padding:1.5rem;overflow-y:auto;display:flex;flex-direction:column;gap:1.1rem;font-size:0.9rem;color:#94a3b8;line-height:1.7;">
         <p style="font-weight:700;color:#fff;">تاريخ السريان: أكتوبر 2026</p>
-        <h3 style="font-size:1rem;font-weight:800;color:#fff;">1. جمع البيانات</h3>
-        <p>نحن في Alhelal Smart Expense نحترم خصوصيتك لأقصى درجة. نقوم بجمع البيانات التي تدخلها طواعية لتتبع مصاريفك (مثل المبالغ، تصنيف النفقات، وملاحظات المعاملات) بهدف تقديم الخدمة الحسابية لك حصراً.</p>
-        <h3 style="font-size:1rem;font-weight:800;color:#fff;">2. حماية وتشفير المعلومات</h3>
-        <p>تتم مزامنة بياناتك وحمايتها عبر خوادم سحابية مشفرة ببروتوكولات SSL/TLS. لا يتم الاطلاع على سجلاتك المالية أو مشاركتها أو بيعها لأي جهة إعلانية أو خارجية مطلقاً.</p>
-        <h3 style="font-size:1rem;font-weight:800;color:#fff;">3. صلاحيات التطبيق</h3>
-        <p>لا يطلب تطبيقنا الوصول إلى جهات الاتصال أو الرسائل الخاصة أو الملفات غير المتعلقة بعمل التطبيق، ويلتزم بمعايير أمان وسياسات متجر Google Play.</p>
-        <h3 style="font-size:1rem;font-weight:800;color:#fff;">4. حذف الحساب والبيانات</h3>
-        <p>يحق للمستخدم طلب حذف حسابه وكافة سجلاته المالية المرتبطة به نهائياً من خوادمنا في أي وقت من خلال التواصل معنا عبر البريد الإلكتروني: <span class="text-brand en-font">support@alhelalsmart.com</span></p>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">1. حماية وتشفير البيانات</h3>
+        <p>خصوصيتك وأمان بياناتك المالية في قمة أولوياتنا. لا نقوم ببيع أو مشاركة أو استغلال بياناتك الشخصية والمالية مع أي جهة خارجية أو إعلانية مطلقاً.</p>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">2. التزامن السحابي</h3>
+        <p>تتم كافة الاتصالات وتخزين السجلات المالية عبر خوادم سحابية مؤمنة بأعلى معايير التشفير (SSL/TLS و AES-256).</p>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">3. حذف الحساب الكامل</h3>
+        <p>يحق لك طلب حذف حسابك وبياناتك بالكامل من خوادمنا في أي وقت بمراسلتنا على: <span class="text-accent en-font">support@alhelalsmart.com</span></p>
       </div>
-      <div class="flex justify-end" style="padding:1rem 1.5rem;border-top:1px solid #1b2234;">
-        <button type="button" onclick="closeModal('privacyModal')" class="btn-brand" style="padding:0.6rem 1.5rem;font-size:0.875rem;">إغلاق</button>
+      <div class="flex justify-end" style="padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
+        <button type="button" onclick="closeModal('privacyModal')" class="btn-glow" style="padding:0.6rem 1.6rem;font-size:0.875rem;">إغلاق</button>
       </div>
     </div>
   </div>
@@ -475,42 +459,42 @@
   <!-- نافذة شروط الاستخدام (Terms of Service) -->
   <div id="termsModal" class="fixed modal-backdrop hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
     <div class="modal-box text-right">
-      <div class="flex items-center justify-between" style="padding:1.25rem 1.5rem;border-bottom:1px solid #1b2234;">
-        <h2 id="termsTitle" style="font-size:1.15rem;font-weight:800;color:#fff;">شروط الاستخدام (Terms of Service)</h2>
-        <button type="button" onclick="closeModal('termsModal')" class="nav-btn" style="padding:6px;" aria-label="إغلاق نافذة الشروط">
+      <div class="flex items-center justify-between" style="padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.08);">
+        <h2 id="termsTitle" style="font-size:1.15rem;font-weight:800;color:#fff;">شروط الخدمة والاستخدام</h2>
+        <button type="button" onclick="closeModal('termsModal')" class="nav-btn" style="padding:6px;" aria-label="إغلاق">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <div style="padding:1.5rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem;font-size:0.875rem;color:#cbd5e1;line-height:1.7;">
-        <h3 style="font-size:1rem;font-weight:800;color:#fff;">1. شروط الخدمة</h3>
-        <p>استخدامك لتطبيق وموقع Alhelal Smart Expense يعني موافقتك على استخدام التطبيق لإدارة نفقاتك الشخصية بشكل قانوني ومشروع دون محاولة إساءة استخدام الخدمة السحابية.</p>
-        <h3 style="font-size:1rem;font-weight:800;color:#fff;">2. إخلاء المسؤولية المالية</h3>
-        <p>تطبيق Alhelal Smart Expense هو أداة تنظيمية وتحليلية مساعدة، ولا يقدم نصائح مالية أو استشارات استثمارية معتمدة، وتقع كامل مسؤولية القرارات المالية على المستخدم نفسه.</p>
+      <div style="padding:1.5rem;overflow-y:auto;display:flex;flex-direction:column;gap:1.1rem;font-size:0.9rem;color:#94a3b8;line-height:1.7;">
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">1. الاستخدام المشروع</h3>
+        <p>تطبيق Alhelal Smart Expense مخصص لإدارة وتتبع المصاريف والميزانية الشخصية للأفراد بشكل قانوني سليم دون إساءة استخدام المنظومة.</p>
+        <h3 style="font-size:1rem;font-weight:800;color:#fff;">2. إخلاء المسؤولية الاستثمارية</h3>
+        <p>يقدم التطبيق أدوات ورسوم تحليلية وتنظيمية، ولا يقدم أي استشارات مالية أو توصيات استثمارية إلزامية، وتقع مسؤولية اتخاذ القرارات على المستخدم وحده.</p>
       </div>
-      <div class="flex justify-end" style="padding:1rem 1.5rem;border-top:1px solid #1b2234;">
-        <button type="button" onclick="closeModal('termsModal')" class="btn-brand" style="padding:0.6rem 1.5rem;font-size:0.875rem;">إغلاق</button>
+      <div class="flex justify-end" style="padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
+        <button type="button" onclick="closeModal('termsModal')" class="btn-glow" style="padding:0.6rem 1.6rem;font-size:0.875rem;">إغلاق</button>
       </div>
     </div>
   </div>
 
   <!-- نافذة Google Play الإشعارية -->
   <div id="downloadModal" class="fixed modal-backdrop hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
-    <div class="card-dark text-center" style="max-width:440px;width:100%;padding:2rem;">
-      <div style="width:60px;height:60px;border-radius:18px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem auto;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" fill="#3b82f6"/><path d="M16.81 15.12L13.69 12L3.84 2.15C4.03 2.06 4.26 2 4.5 2C4.94 2 5.36 2.19 5.66 2.49L17.82 9.51L16.81 15.12Z" fill="#60a5fa"/><path d="M16.81 8.88L5.66 21.51C5.36 21.81 4.94 22 4.5 22C4.26 22 4.03 21.94 3.84 21.85L13.69 12L16.81 8.88Z" fill="#1d4ed8"/></svg>
+    <div class="glass-card text-center" style="max-width:460px;width:100%;padding:2.25rem;">
+      <div style="width:64px;height:64px;border-radius:20px;background:rgba(56, 189, 248, 0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem auto;border:1px solid rgba(56, 189, 248, 0.25);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" fill="#38bdf8"/><path d="M16.81 15.12L13.69 12L3.84 2.15C4.03 2.06 4.26 2 4.5 2C4.94 2 5.36 2.19 5.66 2.49L17.82 9.51L16.81 15.12Z" fill="#60a5fa"/><path d="M16.81 8.88L5.66 21.51C5.36 21.81 4.94 22 4.5 22C4.26 22 4.03 21.94 3.84 21.85L13.69 12L16.81 8.88Z" fill="#2563eb"/></svg>
       </div>
-      <h2 id="downloadTitle" style="font-size:1.25rem;font-weight:900;color:#fff;margin-bottom:0.5rem;">قريباً على Google Play</h2>
-      <p class="text-sub" style="font-size:0.875rem;line-height:1.6;margin-bottom:1.5rem;">
-        النسخة المخصصة لأجهزة أندرويد حالياً في مرحلة المراجعة الأخيرة على متجر Google Play. يمكنك استخدام نسخة الويب الفورية بكامل المميزات الآن!
+      <h2 id="downloadTitle" style="font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:0.6rem;">قريباً عبر متجر Google Play</h2>
+      <p class="text-sub" style="font-size:0.92rem;line-height:1.7;margin-bottom:1.75rem;">
+        تطبيق أندرويد حالياً في مرحلة التدقيق النهائي من Google Play. يمكنك الوصول الفوري لكامل الميزات المتقدمة واستخدام المنصة مباشرة عبر الويب الآن!
       </p>
-      <div class="flex flex-col" style="gap:0.75rem;">
-        <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-brand" style="padding:0.75rem;font-size:0.875rem;">فتح نسخة الويب فوراً</a>
-        <button type="button" onclick="closeModal('downloadModal')" class="btn-outline" style="padding:0.65rem;font-size:0.875rem;">إغلاق</button>
+      <div class="flex flex-col" style="gap:0.85rem;">
+        <a href="https://app.alhelalsmart.com" target="_blank" rel="noopener noreferrer" class="btn-glow" style="padding:0.85rem;font-size:0.92rem;">فتح المنصة فوراً</a>
+        <button type="button" onclick="closeModal('downloadModal')" class="btn-secondary" style="padding:0.75rem;font-size:0.92rem;">إغلاق</button>
       </div>
     </div>
   </div>
 
-  <!-- سكربت التحكم وتوليد خلفية النجوم الفضائية المتحركة -->
+  <!-- سكربت التحكم وتوليد الخلفية البانورامية ثلاثية الأبعاد 3D Mesh -->
   <script>
     function scrollToSection(id) {
       var el = document.getElementById(id);
@@ -543,14 +527,14 @@
       }
     });
 
-    /* محرك النجوم التفاعلي الفائق الخفة */
-    (function initStars() {
-      const canvas = document.getElementById('stars-bg');
+    /* محرك الشبكة البانورامية ثلاثية الأبعاد (Interactive Deep 3D Constellation Mesh) */
+    (function init3DMesh() {
+      const canvas = document.getElementById('mesh-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       let w, h;
-      const stars = [];
-      const numStars = 65; // عدد مدروس ومثالي للأداء
+      let particles = [];
+      const particleCount = 45; // عدد مدروس ومثالي للحفاظ على سرعة 60fps كاملة
 
       function resize() {
         w = canvas.width = window.innerWidth;
@@ -559,46 +543,70 @@
       window.addEventListener('resize', resize);
       resize();
 
-      for (let i = 0; i < numStars; i++) {
-        stars.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          size: Math.random() * 1.6 + 0.4,
-          speed: Math.random() * 0.35 + 0.1,
-          opacity: Math.random() * 0.7 + 0.2,
-          pulse: Math.random() * 0.02 + 0.005
-        });
+      class Node {
+        constructor() {
+          this.x = Math.random() * w;
+          this.y = Math.random() * h;
+          this.vx = (Math.random() - 0.5) * 0.45;
+          this.vy = (Math.random() - 0.5) * 0.45;
+          this.radius = Math.random() * 2 + 1;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > w) this.vx *= -1;
+          if (this.y < 0 || this.y > h) this.vy *= -1;
+        }
       }
 
-      function draw() {
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Node());
+      }
+
+      function render() {
         ctx.clearRect(0, 0, w, h);
 
-        // توهج خلفي هادئ أزرق وأرجواني
-        const grad = ctx.createRadialGradient(w / 2, h * 0.25, 10, w / 2, h * 0.25, w * 0.6);
-        grad.addColorStop(0, 'rgba(37, 99, 235, 0.12)');
-        grad.addColorStop(0.5, 'rgba(99, 102, 241, 0.04)');
-        grad.addColorStop(1, 'rgba(3, 5, 12, 0)');
-        ctx.fillStyle = grad;
+        // توهج ضوئي مركزي فاخر
+        const gradient = ctx.createRadialGradient(w / 2, h * 0.25, 20, w / 2, h * 0.25, w * 0.7);
+        gradient.addColorStop(0, 'rgba(37, 99, 235, 0.14)');
+        gradient.addColorStop(0.45, 'rgba(2, 132, 199, 0.05)');
+        gradient.addColorStop(1, 'rgba(3, 7, 18, 0)');
+        ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, w, h);
 
-        // رسم النجوم وتحديث حركتها
-        for (let i = 0; i < numStars; i++) {
-          const s = stars[i];
-          s.y -= s.speed;
-          if (s.y < 0) {
-            s.y = h;
-            s.x = Math.random() * w;
+        // رسم الروابط الشبكية ثلاثية الأبعاد بين العقد
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 160) {
+              const alpha = (1 - dist / 160) * 0.25;
+              ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
           }
-          s.opacity += Math.sin(Date.now() * s.pulse) * 0.008;
+
+          // رسم النقاط المشعة
           ctx.beginPath();
-          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(147, 197, 253, ${Math.max(0.1, Math.min(0.9, s.opacity))})`;
+          ctx.arc(particles[i].x, particles[i].y, particles[i].radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(147, 197, 253, 0.65)';
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = '#38bdf8';
           ctx.fill();
+          ctx.shadowBlur = 0;
         }
 
-        requestAnimationFrame(draw);
+        requestAnimationFrame(render);
       }
-      requestAnimationFrame(draw);
+      requestAnimationFrame(render);
     })();
   </script>
 
